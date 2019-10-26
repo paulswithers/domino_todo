@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<imageresource name='$DBIcon' xmlns='http://www.lotus.com/dxl' version='11.0'
+ replicaid='80257E5A004A751B' hide='design' publicaccess='false' designerversion='8.5.3'
+ imagename='C:\Users\IBM_ADMIN\Desktop\Bluemix\images\xpagesIcons\xpagesText_32x32.png'>
+<noteinfo noteid='1ea' unid='C7538AD3EC73242980257E4F0060AE13' sequence='17'>
+<created><datetime dst='true'>20150524T183600,19+01</datetime></created>
+<modified><datetime dst='true'>20191020T085121,10-05</datetime></modified>
+<revised><datetime dst='true'>20191020T085121,09-05</datetime></revised>
+<lastaccessed><datetime dst='true'>20191020T085121,09-05</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20191020T083709,33-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=BoilerPlate/O=Bluemix</name><name>CN=admin/O=IBM</name><name
+>CN=Paul S Withers/O=paulswithers</name></updatedby>
+<wassignedby><name>CN=Paul S Withers/O=paulswithers</name></wassignedby><png
+>
+iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJ
+bWFnZVJlYWR5ccllPAAAAbpJREFUeNrsVctNw0AQNZELMOKOUkLowK4gTgWJKyA5ckp84hhSgZMK
+YiqISzAVYHFHuAN4E72RhvUicQDlsk/arHd3dubNZydRFBAQEBBwYVzZxfvtQ4JpyWV78/ZYcz/F
+lHK/xn6LvQW+pxiJymPscNbxjpyPMRqez7nuKNcOCPDiEVPO5R0vvNJQg4sZZCp8LzwO9RgZCZ5I
+WgxNPLIzcXDkOSioSFBxJNybQfHEGC+gRJy4pqcid+/oE/m9EJP7JKS6owEBKOwpqJdzY6x3xKcg
+lHO/oJGdGxWcy92GKS25n0hqfREQEg1ZK/ZaD8ydngm5IxR9yiw51twatI7u2iz9BFiMNm8591RJ
+wfooTZGJfMX6+DViVriGStmuDYGeua1YA2OtAchvDOGKEVkwHbYGrHOpjU6MnxMX4klGAX2KJQls
+GYUlw7+mMiH95DjVOeuEUTnQkbVx+PsrMJ5oH9jQQG0iIzJqdMv8f5hiXXkI5XT0aCJyjlJsqrLj
+uz1ow3Ge5ouGFKRWMPxsmsugETkECpLXRnRgoQ8b0V/BNKJz8/pJbnTp/4L4H3W3vj4QEBAQ4OJL
+gAEAbqC4Viix8+gAAAAASUVORK5CYII=
+</png>
+<item name='$FileSize' sign='true'><number>536</number></item>
+<item name='$MimeType' sign='true'><text>image/png</text></item>
+<item name='$FileModDT' sign='true'><datetime dst='true'>20150515T085308,00+01</datetime></item></imageresource>
+

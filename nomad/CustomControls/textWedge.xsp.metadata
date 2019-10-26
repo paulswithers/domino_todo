@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><note xmlns="http://www.lotus.com/dxl" class="form" replicaid="80257E5A004A751B" version="11.0">
+<noteinfo noteid="1f2" sequence="23" unid="CF7CE4FF5DC904EA80257E99003EEB08">
+<created><datetime dst="true">20150806T122714,00+01</datetime></created>
+<modified><datetime dst="true">20191020T085145,26-05</datetime></modified>
+<revised><datetime dst="true">20191020T085145,24-05</datetime></revised>
+<lastaccessed><datetime dst="true">20191020T085145,24-05</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20191020T083709,65-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=XPagesAdmin/O=Bluemix</name><name>CN=admin/O=IBM</name><name>CN=Paul S Withers/O=paulswithers</name></updatedby>
+<wassignedby><name>CN=Paul S Withers/O=paulswithers</name></wassignedby>
+<item name="$TITLE"><text>textWedge.xsp</text></item>
+<item name="$Flags"><text>gC~4;</text></item>
+
+
+<item name="$FileNames" sign="true"><text>textWedge.xsp</text></item>
+
+
+<item name="$DesignerVersion"><text>8.5</text></item>
+
+
+
+
+</note>

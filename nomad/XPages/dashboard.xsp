@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex" styleClass="homeStyle">
+	<xp:this.rendered><![CDATA[#{javascript:
+		viewScope.pageName = "dashboard";
+		return true;}]]>
+	</xp:this.rendered>
+	
+	<xc:simpleLayout id="layout">
+		<xp:panel xp:key="content">
+			<xp:panel id="hiddenContent" style="display:none">
+				<xp:panel styleClass="hiddenContentInner"></xp:panel>
+			</xp:panel>
+			<xc:dash id="dashboardPanel"></xc:dash>
+			<xe:dataView id="dashboardDataView" openDocAsReadonly="true"
+				pageName="/todoDoc.xsp" collapsibleDetail="true"
+				expandedDetail="false" var="viewEntry" showCheckbox="true"
+				showHeaderCheckbox="true" columnTitles="true" rows="10">
+				<xe:this.data>
+					<xp:dominoView var="view1" viewName="todosView" ignoreRequestParams="true">
+						<xp:this.databaseName>
+							<![CDATA[#{javascript:
+								return findDbUtil();
+							}]]>
+						</xp:this.databaseName>
+					</xp:dominoView>
+				</xe:this.data>
+				<xe:this.summaryColumn>
+					<xe:viewSummaryColumn columnTitle="ToDo" columnName="To-Do">
+					</xe:viewSummaryColumn>
+				</xe:this.summaryColumn>
+				<xe:this.extraColumns>
+					<xe:viewExtraColumn columnTitle="Author" styleClass="xspDataViewAuthor"
+						headerStyleClass="xspDataViewAuthor">
+					</xe:viewExtraColumn>
+					<xe:viewExtraColumn columnName="Priority"
+						columnTitle="Priority" styleClass="xspDataViewPriority"
+						headerStyleClass="xspDataViewPriority">
+					</xe:viewExtraColumn>
+					<xe:viewExtraColumn columnName="Due"
+						columnTitle="Due" styleClass="xspDataViewDue"
+						headerStyleClass="xspDataViewDue">
+					</xe:viewExtraColumn>
+				</xe:this.extraColumns>
+				<xp:this.facets>
+					<xp:panel id="noRowsPanel" xp:key="noRows">
+							<xp:button value="New ToDo" id="newTodoBtn" styleClass="btn-primary dashBtn">
+								<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+									<xp:this.action>
+										<xp:openPage name="/todoDoc.xsp" target="newDocument"></xp:openPage>
+									</xp:this.action>
+								</xp:eventHandler>
+							</xp:button>
+							<xp:div style="margin: 10px 0px 40px 0px;">
+								<xp:label id="noTodosLabel" value="Nothing ToDo, create new tasks using the 'New ToDo' button.">
+								</xp:label>
+							</xp:div>
+					</xp:panel>
+					<xp:panel id="iconPanel" xp:key="icon">
+						<xp:div id="icon">
+							<xp:this.styleClass>
+								<![CDATA[#{javascript:
+									var base = "glyphicon glyphicon-";
+									var complete = viewEntry.getColumnValue('Complete');
+									var dueDate:Date = viewEntry.getColumnValue('Due');
+									
+									if(isComplete(complete)) {
+										return base + "ok todoComplete todoStatusIcon"
+									}
+									if(isOverdue(complete, dueDate)) {
+										return base + "warning-sign todoOverdue todoStatusIcon";
+									}
+									if(isUrgent(complete, dueDate)) {
+										return base + "exclamation-sign todoUrgent todoStatusIcon";
+									}
+								}]]>
+							</xp:this.styleClass>
+						</xp:div>
+					</xp:panel>
+					<xp:panel id="authorCol" xp:key="extra0" styleClass="xspDataViewAuthor">
+						<xp:text id="author">
+							<xe:this.value><![CDATA[#{javascript:
+								var author = viewEntry.getColumnValue("Author");
+								
+								if(null != author) {
+									if (typeof author === "string") {
+										return author;
+									}else if (typeof author === "java.util.Vector") {
+										return author.get(0);
+									}
+								}
+								return "";
+								}]]>
+							</xe:this.value>
+						</xp:text>
+					</xp:panel>
+					<xp:pager layout="Previous Group Next" id="pager3"
+						xp:key="pagerBottomRight" partialRefresh="true"
+						partialExecute="true" styleClass="dashPager">
+					</xp:pager>
+					<xp:div xp:key="detail" id="dashboardDetail" styleClass="xspDataViewDetail">
+						<xp:div id="description" style="padding:4px 8px;">
+							<xp:text id="descriptionText" escape="true"
+								value="#{javascript:viewEntry.getColumnValue('Description')}">
+							</xp:text>
+						</xp:div>
+					</xp:div>
+					<xc:buttonPanel id="buttonPanel" xp:key="pagerBottomLeft"></xc:buttonPanel>
+				</xp:this.facets>
+			</xe:dataView>
+		</xp:panel>
+	</xc:simpleLayout>
+</xp:view>

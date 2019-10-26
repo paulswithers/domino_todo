@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xe:navbar id="navBar1" headingText="Carousel Demo" inverted="true" fixed="fixed-top">
+		<xe:this.navbarAfterLinks>
+			<xe:pageTreeNode page="/carousel.xsp" label="Home">
+			</xe:pageTreeNode>
+			<xe:basicLeafNode label="External Link"
+				href="http://www.google.com">
+			</xe:basicLeafNode>
+			<xe:basicContainerNode label="Menu">
+				<xe:this.children>
+					<xe:pageTreeNode page="/navbar.xsp"
+						label="Page Link">
+					</xe:pageTreeNode>
+					<xe:basicLeafNode label="External Link"
+						href="http://www.google.com">
+					</xe:basicLeafNode>
+				</xe:this.children>
+			</xe:basicContainerNode>
+		</xe:this.navbarAfterLinks>
+	</xe:navbar>
+	<xe:carousel id="carousel1"
+		autoCycle="true"
+		slideInterval="3000"
+		pause="true"
+		wrapped="true"
+		heightLarge="600px"
+		heightMedium="500px"
+		heightSmall="400px"
+		heightExtraSmall="300px">
+		<xe:this.slideNodes>
+			<xe:slide headingText="Slide 1" captionText="Caption 1"
+				descriptionText="Description for the first slide in the carousel"
+				backgroundSrc="city2.jpg" buttonHref="dashboard.xsp"
+				buttonLabel="Learn More">
+			</xe:slide>
+			<xe:slide headingText="Slide 2" captionText="Caption 2"
+				descriptionText="Description for the second slide in the carousel"
+				backgroundSrc="land1.jpg" buttonHref="dashboard.xsp"
+				buttonLabel="Learn More">
+			</xe:slide>
+			<xe:slide headingText="Slide 3" captionText="Caption 3"
+				descriptionText="Description for the third slide in the carousel"
+				backgroundSrc="landscape2.jpg" buttonHref="dashboard.xsp"
+				buttonLabel="Learn More">
+			</xe:slide>
+			<xe:slide headingText="Slide 4" captionText="Caption 4"
+				descriptionText="Description for the fourth slide in the carousel"
+				backgroundSrc="landscape3b.jpg" buttonHref="dashboard.xsp"
+				buttonLabel="Learn More">
+			</xe:slide>
+			<xe:slide headingText="Slide 5" captionText="Caption 5"
+				descriptionText="Description for the fifth slide in the carousel"
+				backgroundSrc="landscape4.jpg" buttonHref="dashboard.xsp"
+				buttonLabel="Learn More">
+			</xe:slide>
+			<xe:slide headingText="Slide 6"
+				captionText="Caption 6"
+				descriptionText="Description for the sixth slide in the carousel"
+				backgroundColor="#428BCA" buttonStyleClass="btn-success"
+				buttonHref="dashboard.xsp" buttonLabel="Learn More">
+			</xe:slide>
+		</xe:this.slideNodes>
+	</xe:carousel>
+	<xc:textWedge containerType="container"></xc:textWedge>
+</xp:view>

@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	
+	<xe:keepSessionAlive id="keepSessionAlive1" delay="840"></xe:keepSessionAlive>
+	
+	<xp:this.beforePageLoad>
+		<![CDATA[#{javascript:
+			var name = userBean.commonName;
+			var anon1 = "Anonymous";
+			var anon2 = "anonymous";
+			
+			if(null == name || name == anon1 || name == anon2 || name.equals("")) {
+				sessionScope.isAnonymous = true;
+				sessionScope.user = "Anonymous";
+				
+				//TODO flush any errant cookie?
+			}else{
+				sessionScope.isAnonymous = false;
+				sessionScope.user = name;
+			}
+		}]]>
+	</xp:this.beforePageLoad>
+	<xp:eventHandler event="onClientLoad" submit="false">
+		<xp:this.script><![CDATA[
+			var bs3Theme = #{javascript: return isBootstrap3();}
+			var bs4Theme = #{javascript: return isBootstrap4();}
+			
+			if(null != bs3Theme && bs3Theme === true) {
+				$(".navbar-right li:nth-child(1) a").prepend("<div class='glyphicon glyphicon-home utilIcon'></div>")
+				$(".navbar-right li:nth-child(2) a").prepend("<div class='glyphicon glyphicon-th-list utilIcon'></div>")
+				$(".navbar-right li:nth-child(3) a").prepend("<div class='glyphicon glyphicon-ok utilIcon'></div>")
+				$(".navbar-right li:nth-child(4) a").prepend("<div class='glyphicon glyphicon-exclamation-sign utilIcon'></div>")
+				$(".navbar-right li:nth-child(5) a").prepend("<div class='glyphicon glyphicon-warning-sign utilIcon'></div>")
+			}else if(null != bs4Theme && bs4Theme === true) {
+				$(".navbar-nav.pull-xs-right li:nth-child(1) a").prepend("<div class='glyphicon glyphicon-home utilIcon'></div>")
+				$(".navbar-nav.pull-xs-right li:nth-child(2) a").prepend("<div class='glyphicon glyphicon-th-list utilIcon'></div>")
+				$(".navbar-nav.pull-xs-right li:nth-child(3) a").prepend("<div class='glyphicon glyphicon-ok utilIcon'></div>")
+				$(".navbar-nav.pull-xs-right li:nth-child(4) a").prepend("<div class='glyphicon glyphicon-exclamation-sign utilIcon'></div>")
+				$(".navbar-nav.pull-xs-right li:nth-child(5) a").prepend("<div class='glyphicon glyphicon-warning-sign utilIcon'></div>")
+			}]]>
+		</xp:this.script>
+	</xp:eventHandler>
+	
+	<xe:navbar id="custom-navbar1" fixed="fixed-top" pageWidth="fluid" inverted="true" headingStyle="font-weight:bold;">
+		<xe:this.navbarAfterLinks>
+			<xe:basicLeafNode title="Home" href="/dashboard.xsp"></xe:basicLeafNode>
+			<xe:basicLeafNode title="ToDos" href="/todos.xsp"></xe:basicLeafNode>
+			<xe:basicLeafNode title="Completed" href="/complete.xsp"></xe:basicLeafNode>
+			<xe:basicLeafNode title="Urgent" href="/urgent.xsp"></xe:basicLeafNode>
+			<xe:basicLeafNode title="Overdue" href="/overdue.xsp"></xe:basicLeafNode>
+		</xe:this.navbarAfterLinks>
+		<xe:this.headingText><![CDATA[#{javascript:
+			var appName = "ToDo App";
+	
+				if(viewScope.pageName) {
+				if(viewScope.pageName.equals("dashboard")) {
+					return appName + " - Home";	
+				}else if(viewScope.pageName.equals("todos")) {
+					return appName + " - ToDos";
+				}else if(viewScope.pageName.equals("complete")) {
+					return appName + " - Complete";
+				}else if(viewScope.pageName.equals("urgent")) {
+					return appName + " - Urgent";
+				}else if(viewScope.pageName.equals("overdue")) {
+					return appName + " - Overdue";
+				}
+			}
+			return appName;
+			}]]>
+		</xe:this.headingText>
+		<xp:div id="dropdownContainer">
+			<xp:this.styleClass>
+				<![CDATA[#{javascript: if(isBootstrap4()){return "nav-custom pull-xs-right"};}]]>
+			</xp:this.styleClass>
+			<xp:div id="loginDropdown" styleClass="dropdown loginDropdown" style="top:1px">
+				<xp:this.rendered>
+					<![CDATA[#{javascript: return (sessionScope.isAnonymous == true);}]]>
+				</xp:this.rendered>
+				<xp:div id="loginBtn" styleClass="dropdown-toggle" style="color:white;">
+					<xp:this.attrs>
+						<xp:attr name="data-toggle" value="dropdown"></xp:attr>
+					</xp:this.attrs>
+					Login
+					<span class="caret" style="margin:0px 6px;"></span>
+				</xp:div>
+				<div id="loginMenu" class="dropdown-menu xspDropdown" role="menu">
+					<xp:eventHandler event="onclick" submit="false">
+						<xp:this.script><![CDATA[
+							//prevent clicks inside the menu from disappearing the menu
+							thisEvent.stopPropagation();
+						]]></xp:this.script>
+					</xp:eventHandler>
+					<xp:div style="padding:8px 10px">
+						<xp:div id="usernameLabel" styleClass="xspDropdownLabel">
+							<xp:eventHandler event="onclick" submit="false">
+								<xp:this.script><![CDATA[
+									//prevent clicking the label from disappearing the menu
+									thisEvent.stopPropagation();
+								]]></xp:this.script>
+							</xp:eventHandler>
+							Username:
+						</xp:div>
+						<xp:inputText id="nameInput">
+							<xp:eventHandler event="onclick" submit="false">
+								<xp:this.script><![CDATA[
+									//prevent clicking into the input from disappearing the menu
+									thisEvent.stopPropagation();
+								]]></xp:this.script>
+							</xp:eventHandler>
+							<xp:eventHandler event="onkeypress" submit="false">
+								<xp:this.script><![CDATA[
+									//Capture enter key press
+									var keycode = (thisEvent.keyCode ? thisEvent.keyCode : thisEvent.which);
+									if(keycode === 13) {
+										//attempt login and prevent dropdown disappearing
+										doLogin();
+										thisEvent.stopPropagation();
+										thisEvent.preventDefault();
+									}
+								]]></xp:this.script>
+							</xp:eventHandler>
+						</xp:inputText>
+					</xp:div>
+					<xp:div style="padding:8px 10px">
+						<xp:div id="passwordLabel" styleClass="xspDropdownLabel">
+							<xp:eventHandler event="onclick" submit="false">
+								<xp:this.script><![CDATA[
+									//prevent clicking the label from disappearing the menu
+									thisEvent.stopPropagation();
+								]]></xp:this.script>
+							</xp:eventHandler>
+							Password:
+						</xp:div>
+						<xp:inputText id="passInput" password="true" autocomplete="off">
+							<xp:eventHandler event="onclick" submit="false">
+								<xp:this.script><![CDATA[
+									//prevent clicking into the input from disappearing the menu
+									thisEvent.stopPropagation();
+								]]></xp:this.script>
+							</xp:eventHandler>
+							<xp:eventHandler event="onkeypress" submit="false">
+								<xp:this.script><![CDATA[
+									//Capture enter key press
+									var keycode = (thisEvent.keyCode ? thisEvent.keyCode : thisEvent.which);
+									if(keycode === 13) {
+										//attempt login and prevent dropdown disappearing
+										doLogin();
+										thisEvent.stopPropagation();
+										thisEvent.preventDefault();
+									}
+								]]></xp:this.script>
+							</xp:eventHandler>
+						</xp:inputText>
+					</xp:div>
+					<xp:div style="padding:8px 10px">
+						<xp:button value="Login" styleClass="btn-primary" id="menuLoginBtn">
+							<xp:eventHandler event="onclick" submit="false">
+								<xp:this.script><![CDATA[
+									doLogin();
+									thisEvent.stopPropagation();
+								]]></xp:this.script>
+							</xp:eventHandler>
+						</xp:button>
+						<xp:button value="Cancel" styleClass="btn-warning" id="menuCancelBtn">
+							<xp:eventHandler event="onclick" submit="false">
+								<xp:this.script><![CDATA[
+									var msg = dojo.byId("#{id:loginMessage}");
+									msg.class = "";
+									msg.innerHTML = "";
+									$(".loginDropdown .dropdown-toggle").dropdown("toggle");
+								]]></xp:this.script>
+							</xp:eventHandler>
+						</xp:button>
+						<xp:text id="loginMessage"></xp:text>
+					</xp:div>
+				</div>
+			</xp:div>
+			<xp:div id="logoutDropdown" styleClass="dropdown" style="top:1px">
+				<xp:this.rendered>
+					<![CDATA[#{javascript: return !(sessionScope.isAnonymous === true);}]]>
+				</xp:this.rendered>
+				<xp:div id="welcomeBtn" styleClass="dropdown-toggle" style="color:white;">
+					<xp:this.attrs>
+						<xp:attr name="data-toggle" value="dropdown"></xp:attr>
+					</xp:this.attrs>
+					<xp:text>
+						<xp:this.value>
+							<![CDATA[#{javascript:return "Welcome " + sessionScope.user;}]]>
+						</xp:this.value>
+					</xp:text>
+					<span class="caret" style="margin:0px 6px;"></span>
+				</xp:div>
+				<ul class="dropdown-menu xspDropdown" role="menu" style="min-width:160px;">
+					<li style="padding:3px">
+						<xp:link id="logoutLink" text="Logout">
+							<xp:eventHandler event="onclick" submit="false">
+								<xp:this.script>
+									<![CDATA[
+										// Perform 2 stage logout process
+										// Part 1 - Remote service to clear session cookies
+										var deferred = logoutUtil.clearCookies();
+										
+										// Part 2 - CSJS dojo xhr POST to 'names.nsf/?logout' and redirect to reload page
+										deferred.addCallback(function(result) {
+											if(result) {
+												// Casll CSJS method to perform the 'names.nsf/?logout'
+												doLogout();
+											}else{
+												// TODO better handling of logout failure?
+											}
+										});
+									]]>
+								</xp:this.script>
+							</xp:eventHandler>
+						</xp:link>
+					</li>
+				</ul>
+			</xp:div>
+		</xp:div>
+	</xe:navbar>
+	
+	<xe:applicationLayout id="applicationLayout1">
+		<xe:this.configuration>
+			<xe:simpleResponsiveConfiguration pageWidth="fluid"
+				collapseLeftColumn="true" navbar="false"
+				collapsedLeftMenuLabel="Menu"
+				collapseLeftTarget=".hiddenContentInner">
+			</xe:simpleResponsiveConfiguration>
+		</xe:this.configuration>
+		<xe:this.facets>
+			<xe:navigator id="navMenu" xp:key="LeftColumn">
+				<xe:this.treeNodes>
+					<xe:pageTreeNode label="Home" page="/dashboard.xsp"></xe:pageTreeNode>
+					<xe:pageTreeNode label="ToDos" page="/todos.xsp"></xe:pageTreeNode>
+					<xe:pageTreeNode label="Complete" page="/complete.xsp"></xe:pageTreeNode>
+					<xe:pageTreeNode label="Urgent" page="/urgent.xsp"></xe:pageTreeNode>
+					<xe:pageTreeNode label="Overdue" page="/overdue.xsp"></xe:pageTreeNode>
+				</xe:this.treeNodes>
+			</xe:navigator>
+		</xe:this.facets>
+		<xp:callback id="contentPanel" xp:key="content"></xp:callback>
+		<xp:div styleClass="alert alert-warning xspWarning">
+			<xp:text escape="true" id="warning1" value="Warning - " style="font-weight:bold;"></xp:text>
+			<xp:text escape="true" id="warning2" value="Do not store sensitive information in this example application."></xp:text>
+		</xp:div>
+	</xe:applicationLayout>
+	
+	<xp:scriptBlock id="scriptBlock1">
+		<xp:this.value><![CDATA[
+			// Setup necessary variables
+			var username = dojo.byId("#{id:nameInput}");
+			var password = dojo.byId("#{id:passInput}");
+			var msg = dojo.byId("#{id:loginMessage}");
+			var loginAppPath = "/names.nsf?login";
+			var logoutAppPath = "#{javascript: facesContext.getExternalContext().getRequest().getContextPath()}" + "/?logout";
+			var currentPage = "#{javascript: return context.getUrl().getAddress().toString()}";
+			var redirectUrl = currentPage;
+			
+			//Login function - Performs POST request to 'names.nsf/?login' with login credentials
+			doLogin = function() { require([ "dojo/request/xhr" ],
+				function(xhr) {
+					xhr(
+						loginAppPath,
+						{
+							method : "POST",
+							data : {
+								"username" : username.value,
+								"password" : password.value
+							},
+							sync : true,
+							handleAs : "text"
+						}
+					).then(
+						function(response) {
+							// Handle any login failure with appropriate message in dropdown
+							if (document.cookie.match(/DomAuthSessId|LtpaToken|LtpaToken2/)) {
+								if(response.indexOf("Server" + " Login") > -1 && response.indexOf("You are not" + " authorized") > -1) {
+									msg.innerHTML = "Access not authorized.";
+									msg.className = "alert alert-danger";
+									document.cookie = "DomAuthSessId=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/";
+								}else{
+									msg.innerHTML = "Login successful! Redirecting...";
+									msg.className = "alert alert-success";
+									//location.reload();
+									window.location.href = redirectUrl;
+								}
+							} else {
+								if(response.indexOf("Server" + " Login") > -1 && response.indexOf("Invalid username" + " or password") > -1) {
+									msg.innerHTML = "Invalid username/password.";
+									msg.className = "alert alert-danger";
+									password.value = "";
+									password.focus();
+								}else{
+									msg.innerHTML = "Login failed. Please try again.";
+									msg.className = "alert alert-danger";
+								}
+							}
+						},
+						function(err) {
+							msg.innerHTML = "Error logging in.";
+							msg.className = "alert alert-danger";
+						},
+						function(evt) {}
+					);
+				}
+			);}
+			
+			// Logout function - Performs GET request to 'names.nsf/?logout', then reloads the page
+			doLogout = function() { require([ "dojo/request/xhr" ], function(xhr) {
+					xhr(
+						logoutAppPath,
+						{
+							method : "GET",
+							handleAs : "text"
+						}
+					).then(
+						function(response) {
+							window.location.href = currentPage;
+						},
+						function(err) {},
+						function(evt) {}
+					);
+				}
+			);}]]>
+		</xp:this.value>
+	</xp:scriptBlock>
+	<xe:jsonRpcService id="jsonRpcService1" serviceName="logoutUtil">
+			<xe:this.methods>
+				<xe:remoteMethod name="clearCookies">
+					<xe:this.script><![CDATA[
+						try{
+							// Setup all the necessary variables
+							var extContext = facesContext.getExternalContext();
+							var request = extContext.getRequest();
+							var response = extContext.getResponse();
+							var curContext = com.ibm.domino.xsp.module.nsf.NotesContext.getCurrent();
+							var session = request.getSession(false);
+							var sessionId = session.getId();
+							var allCookies = request.getCookies();
+							
+							// Clear out all the cookies
+							if (null != allCookies) {
+								var cookie = allCookies[0];
+								var i;
+								for (i = 0; i < allCookies.length; i += 1) {
+									cookie.setValue("");
+									cookie.setPath("/");
+									cookie.setMaxAge(0);
+									response.addCookie(cookie);
+								}
+							}
+							session.invalidate();
+							
+							// now nuke the XSP session from RAM, then return
+							curContext.getModule().removeSession(sessionId);
+							return true;
+						}catch(exc) {
+							// TODO better handling of logout failure?
+							return false;
+						}
+					]]>
+				</xe:this.script>
+			</xe:remoteMethod>
+		</xe:this.methods>
+	</xe:jsonRpcService>
+</xp:view>

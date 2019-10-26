@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='11.0'
+ replicaid='80257E5A004A751B'>
+<noteinfo noteid='126' unid='E063FE1E793313D680257DAF004770BC' sequence='9'>
+<created><datetime>20141215T130019,16+00</datetime></created>
+<modified><datetime dst='true'>20191024T060909,56-05</datetime></modified>
+<revised><datetime dst='true'>20191024T060909,55-05</datetime></revised>
+<lastaccessed><datetime dst='true'>20191024T060909,55-05</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20191020T081628,91-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=BoilerPlate/O=Bluemix</name><name>CN=Paul S Withers/O=paulswithers</name></updatedby>
+<item name='IconBitmap' summary='true' sign='true'>
+<rawitemdata type='6'>
+AiAgAQAA///////wD///4Af//8AD//4AAH/8AAA/+AAAH/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAA
+D+AAAAfAAAADgAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAcAAAAPwAAAP8AAAD/AAAA/wAAAP
++AAAH/wAAD//8A////gf//////8AAAAAAAAAAAAAAAAAAAAAAAAAAAAA/////wAAAAAAAAAAAAAA
+DxERERHwAAAAAAAAAAAAAPEd3d3RHwAAAAAAAAAAD//x3Xd33R//8AAAAAAAAPEREdd3d30RER8A
+AAAAAA8R3d3Xd3d93d0R8AAAAADxHXd913d3fdd30R8AAAAA8dd3fdd3d33Xd30fAAAAAPHXd33X
+d3d913d9HwAAAADx13d913d3fdd3fR8AAAAA8dd3fdd3d33Xd30fAAAAAPHXd33Xd3d913d9HwAA
+AA/x13d913d3fdd3fR/wAADxEdd3fdd3d33Xd30RHwAPEd13d33Xd3d913d33RHw8R13d3d913d3
+fdd3d3fRH/HXd3d3fdd3d33Xd3d3fR/x13d3d33Xd3d913d3d30f8dd3d3fR13d3fR13d3d9H/Ed
+3d3dEdd3d30R3d3d0R8PEREd3dEd3d3RHd3RERHwAP/x13d9Ed3dEdd3fR//AAAA8dd3fR13d9HX
+d30fAAAAAPHXd33Xd3d913d9HwAAAADx13d913d3fdd3fR8AAAAA8R3d0dd3d30d3dEfAAAAAA8R
+EREdd3fRERER8AAAAAAA////Ed3dEf///wAAAAAAAAAAAPERER8AAAAAAAAAAAAAAAAP///wAAAA
+AAAAAAACICABAAD/////+A4DgA==
+</rawitemdata></item>
+<item name='$DefaultClientXPage'><text>dashboard.xsp</text></item>
+<item name='$DefaultXPage'><text>dashboard.xsp</text></item>
+<item name='$TITLE'><text>IBM XPages ToDo Design App</text></item>
+<item name='$Daos'><text>0</text></item>
+<item name='$LargeSummary'><text>0</text></item>
+<item name='$Flags'><text>J!7F</text></item>
+<item name='$LaunchXPageRunOnServer'><text>0</text></item>
+<item name='$FlagsNoRefresh'><text>rv</text></item>
+<item name='$DefaultFrameset'><text>Main</text></item></note>
+

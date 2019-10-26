@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<frameset name='Mobile' xmlns='http://www.lotus.com/dxl' version='11.0' replicaid='80257E5A004A751B'
+ publicaccess='false' designerversion='8.5.3' columns='68 32' spacing='0px'
+ bordercolor='none'>
+<noteinfo noteid='2b6' unid='F8D2E4363AE1AC5C8625849D003CFF4A' sequence='16'>
+<created><datetime dst='true'>20191024T060615,14-05</datetime></created>
+<modified><datetime dst='true'>20191026T050709,17-05</datetime></modified>
+<revised><datetime dst='true'>20191026T050709,16-05</datetime></revised>
+<lastaccessed><datetime dst='true'>20191026T050709,16-05</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20191024T060615,36-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Paul S Withers/O=paulswithers</name></updatedby>
+<wassignedby><name>CN=Paul S Withers/O=paulswithers</name></wassignedby>
+<frameset rows='28 72' spacing='0px'>
+<frame name='dashboard'><namedelementlink type='form' name='dashboard'/></frame>
+<frame name='view' targetframe='NotesPreview' showactionbar='false'><namedelementlink
+ type='view'><code event='value'><formula>vw:=@Environment("ToDo_View");
+@If(vw="";"todosView";vw)</formula></code><code event='namedelementkind'><formula
+>"View"</formula></code></namedelementlink></frame></frameset>
+<frame name='NotesPreview'/></frameset>
+

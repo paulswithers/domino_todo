@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><imageresource xmlns="http://www.lotus.com/dxl" designerversion="8.5.3" name="white.png" publicaccess="false" replicaid="80257E5A004A751B" version="11.0">
+<noteinfo noteid="2aa" sequence="2" unid="F6168F8B2B9DFECD8625849B0041336E">
+<created><datetime dst="true">20191022T065210,06-05</datetime></created>
+<modified><datetime dst="true">20191022T065456,00-05</datetime></modified>
+<revised><datetime dst="true">20191022T065455,99-05</datetime></revised>
+<lastaccessed><datetime dst="true">20191022T065455,99-05</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20191022T065210,39-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Paul S Withers/O=paulswithers</name></updatedby>
+<wassignedby><name>CN=Paul S Withers/O=paulswithers</name></wassignedby>
+
+<item name="$MimeType" sign="true"><text>image/png</text></item>
+<item name="$FileModDT" sign="true"><datetime dst="true">20191022T125342,00+01</datetime></item></imageresource>

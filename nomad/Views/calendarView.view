@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<view name='calendarView' xmlns='http://www.lotus.com/dxl' version='11.0'
+ replicaid='80257E5A004A751B' showinmenu='false' noreplace='true' publicaccess='false'
+ designerversion='8.5.3' type='calendar' unreadmarks='none' onrefresh='refresh'
+ showmargin='true' shrinkrows='false' extendlastcolumn='false' unreadcolor='black'
+ rowlinecount='1' rowspacing='1' bgcolor='white' boldunreadrows='false' evaluateactions='false'
+ allownewdocuments='false' allowcustomizations='true' hidemarginborder='false'
+ marginwidth='0px' marginbgcolor='white' uniquekeys='false' formatnoteid='DBCFFF362FDFA7A180257E99003EB09F'>
+<noteinfo noteid='326' unid='8C2F530823CE2F5C8625849E0073F13D' sequence='5'>
+<created><datetime dst='true'>20191025T160623,97-05</datetime></created>
+<modified><datetime dst='true'>20191026T053747,11-05</datetime></modified>
+<revised><datetime dst='true'>20191026T053747,09-05</datetime></revised>
+<lastaccessed><datetime dst='true'>20191026T053747,09-05</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20191025T160625,07-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Paul S Withers/O=paulswithers</name></updatedby>
+<wassignedby><name>CN=Paul S Withers/O=paulswithers</name></wassignedby><code
+ event='selection'><formula>SELECT (form = "todo")</formula></code>
+<actionbar bgcolor='white' bordercolor='black'><actionbarstyle height='28px'
+ repeat='tile'><imageref name='white.png'/></actionbarstyle>
+<actionbuttonstyle heighttype='fixed' height='22' bgcolor='white' displayborder='always'/><font
+ size='14pt' name='Verdana' pitch='variable' truetype='true' familyid='20'/><border
+ style='solid'/></actionbar>
+<column sort='ascending' hidedetailrows='false' itemname='duedate' width='14.8750'
+ resizable='false' separatemultiplevalues='false' sortnoaccent='false' sortnocase='true'
+ showaslinks='false'><columnheader title='Due'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='name' width='21.1250' resizable='false'
+ separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
+ title='To-Do'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='$6' width='10' resizable='false'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='Author'><font size='9pt' style='bold'/></columnheader><code event='value'><formula
+>@Name([CN]; @Author)</formula></code></column>
+<column hidedetailrows='false' itemname='priority' width='10' resizable='false'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='Priority'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='$8' width='7' resizable='true' separatemultiplevalues='false'
+ sortnoaccent='false' sortnocase='true' showaslinks='false' showasicons='true'><columnheader
+ title='Completed'><font size='9pt' style='bold'/></columnheader><code event='value'><formula
+>@If(complete="true";84;83)</formula></code></column><calendarformat formats='twoday oneweek twoweek onemonth oneyear oneday workweek'
+ dayseparatorscolor='black' todaycolor='red' busycolor='white' gridbgcolor='white'
+ workhourscolor='white' todobgcolor='white' headerbgcolor='white' nonmonthbgcolor='white'
+ nonmonthtextcolor='black' daydatebgcolor='#e1e1e1' headers='tabs'><datedisplay
+/><timeslotdisplay/><headerdisplay/><oneweekdisplay/></calendarformat></view>
+

@@ -1,0 +1,233 @@
+<?xml version='1.0' encoding='utf-8'?>
+<form name='dashboard' xmlns='http://www.lotus.com/dxl' version='11.0' replicaid='80257E5A004A751B'
+ publicaccess='false' designerversion='8.5.3' renderpassthrough='true'>
+<noteinfo noteid='2be' unid='3975FFFFEC502F3F8625849D003F3358' sequence='40'>
+<created><datetime dst='true'>20191024T063019,12-05</datetime></created>
+<modified><datetime dst='true'>20191026T053138,79-05</datetime></modified>
+<revised><datetime dst='true'>20191026T053138,77-05</datetime></revised>
+<lastaccessed><datetime dst='true'>20191026T053138,77-05</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20191024T063019,59-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Paul S Withers/O=paulswithers</name></updatedby>
+<wassignedby><name>CN=Paul S Withers/O=paulswithers</name></wassignedby><code
+ event='windowtitle'><formula>"To Dos"</formula></code>
+<body><richtext>
+<pardef id='1' hide='notes web mobile'/>
+<par def='1'><field type='text' kind='editable' name='SaveOptions'><code event='defaultvalue'><formula
+>"0"</formula></code></field><compositedata type='98' prevtype='65418' nexttype='222'
+ afterparcount='7' containertype='65418' aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par>
+<table widthtype='fitwindow' leftmargin='0.7500in' refwidth='12.2708in'><tablecolumn
+ width='20%'/><tablecolumn width='20%'/><tablecolumn width='20%'/><tablecolumn
+ width='20%'/><tablecolumn width='20%'/>
+<tablerow>
+<tablecell borderwidth='0px'>
+<pardef id='3' align='center' keepwithnext='true' keeptogether='true'/>
+<par def='3'><run><font size='14pt' name='Verdana' pitch='variable' truetype='true'
+ familyid='20'/></run><actionhotspot hotspotstyle='none' regionid='1'><code
+ event='click'><formula>@Environment("ToDo_View";"incompleteView");
+@Command([RefreshWindow])</formula></code><picture width='182px' height='182px'
+ scaledheight='0.9479in' scaledwidth='0.9479in'><imageref name='incomplete-dashboard.png'/></picture><run
+><font size='14pt' name='Verdana' pitch='variable' truetype='true' familyid='20'/></run></actionhotspot></par>
+<pardef id='4' align='center' leftmargin='0' spaceafter='1.5' tabs='L0.5000in L1in L1.5000in L2in L2.5000in L3in L3.5000in L4in'/>
+<par def='4'><region regionid='1' end='true'><run><font size='14pt' style='bold'
+ name='Verdana' pitch='variable' truetype='true' familyid='20' color='#2d72ad'/>Incomplete</run></region><run
+><font size='14pt' style='bold' name='Verdana' pitch='variable' truetype='true'
+ familyid='20' color='#2d72ad'/></run></par>
+<table leftmargin='0' widthtype='fixedcenter' refwidth='0.7875in'><tablecolumn
+ width='0.7875in'/>
+<tablerow>
+<tablecell borderwidth='0px' bgcolor='#2d72ad'>
+<pardef id='6' align='center' spacebefore='1.5' spaceafter='1.5' keepwithnext='true'
+ keeptogether='true'/>
+<par def='6'><run><font size='14pt' style='bold' name='Verdana' pitch='variable'
+ truetype='true' familyid='20' color='white'/></run><actionhotspot hotspotstyle='none'><code
+ event='click'><formula>@Environment("ToDo_View";"incompleteView");
+@Command([RefreshWindow])</formula></code><run><font size='14pt' color='white'
+ style='bold' name='Verdana' pitch='variable' truetype='true' familyid='20'/><field
+ type='number' kind='computedfordisplay' name='IncompleteTotal'><numberformat
+ format='general' digits='2' punctuated='false' parens='false' percent='false'
+ bytes='false'/><code event='defaultvalue'><formula>@Elements(@DbColumn("":"NoCache";"";"incompleteView";1))</formula></code></field></run><run
+><font size='14pt' style='bold' name='Verdana' pitch='variable' truetype='true'
+ familyid='20' color='white'/></run></actionhotspot><run><font size='14pt'
+ style='bold' name='Verdana' pitch='variable' truetype='true' familyid='20'
+ color='white'/></run></par></tablecell></tablerow></table>
+<pardef id='7' align='center' spacebefore='1.5' hide='notes web mobile' keepwithnext='true'
+ keeptogether='true'/>
+<par def='7'><run><font size='14pt' style='bold' name='Verdana' pitch='variable'
+ truetype='true' familyid='20' color='#2ccbd4'/></run></par></tablecell>
+<tablecell borderwidth='0px'>
+<pardef id='8' align='center' keepwithnext='true' keeptogether='true'/>
+<par def='8'><run><font size='14pt' name='Verdana' pitch='variable' truetype='true'
+ familyid='20'/></run><actionhotspot hotspotstyle='none' regionid='2'><code
+ event='click'><formula>@Environment("ToDo_View";"completeView");
+@Command([RefreshWindow])</formula></code><picture width='91px' height='91px'
+ scaledheight='0.9479in' scaledwidth='0.9479in'><imageref name='complete-dashboard.png'/></picture><run
+><font size='14pt' name='Verdana' pitch='variable' truetype='true' familyid='20'/></run></actionhotspot></par>
+<pardef id='9' align='center' spaceafter='1.5' keepwithnext='true' keeptogether='true'/>
+<par def='9'><region regionid='2' end='true'><run><font size='14pt' style='bold'
+ name='Verdana' pitch='variable' truetype='true' familyid='20' color='#00c200'/>Completed</run></region><run
+><font size='14pt' style='bold' name='Verdana' pitch='variable' truetype='true'
+ familyid='20' color='#00c200'/></run></par>
+<table leftmargin='0' widthtype='fixedcenter' refwidth='0.7875in'><tablecolumn
+ width='0.7875in'/>
+<tablerow>
+<tablecell borderwidth='0px' bgcolor='#1db536'>
+<pardef id='11' align='center' spacebefore='1.5' spaceafter='1.5' keepwithnext='true'
+ keeptogether='true'/>
+<par def='11'><run><font size='14pt' style='bold' name='Verdana' pitch='variable'
+ truetype='true' familyid='20' color='white'/></run><actionhotspot hotspotstyle='none'><code
+ event='click'><formula>@Environment("ToDo_View";"incompleteView");
+@Command([RefreshWindow])</formula></code><run><font size='14pt' color='white'
+ style='bold' name='Verdana' pitch='variable' truetype='true' familyid='20'/><field
+ type='number' kind='computedfordisplay' name='CompletedTotal'><numberformat
+ format='general' digits='2' punctuated='false' parens='false' percent='false'
+ bytes='false'/><code event='defaultvalue'><formula>@Elements(@DbColumn("":"NoCache";"";"completeView";1))</formula></code></field></run><run
+><font size='14pt' style='bold' name='Verdana' pitch='variable' truetype='true'
+ familyid='20' color='white'/></run></actionhotspot><run><font size='14pt'
+ style='bold' name='Verdana' pitch='variable' truetype='true' familyid='20'
+ color='white'/></run></par></tablecell></tablerow></table>
+<pardef id='12' align='center' spacebefore='1.5' hide='notes web mobile' keepwithnext='true'
+ keeptogether='true'/>
+<par def='12'><run><font size='14pt' style='bold' name='Verdana' pitch='variable'
+ truetype='true' familyid='20' color='#00c200'/></run></par></tablecell>
+<tablecell borderwidth='0px'>
+<pardef id='13' align='center' keepwithnext='true' keeptogether='true'/>
+<par def='13'><run><font size='14pt' name='Verdana' pitch='variable' truetype='true'
+ familyid='20'/></run><actionhotspot hotspotstyle='none' regionid='3'><code
+ event='click'><formula>@Environment("ToDo_View";"urgentView");
+@Command([RefreshWindow])</formula></code><picture width='182px' height='182px'
+ scaledheight='0.9479in' scaledwidth='0.9479in'><imageref name='urgent-dashboard.png'/></picture><run
+><font size='14pt' name='Verdana' pitch='variable' truetype='true' familyid='20'/></run></actionhotspot></par>
+<pardef id='14' align='center' spaceafter='1.5' keepwithnext='true' keeptogether='true'/>
+<par def='14'><region regionid='3' end='true'><run><font size='14pt' style='bold'
+ name='Verdana' pitch='variable' truetype='true' familyid='20' color='#fcba03'/>Urgent</run></region><run
+><font size='14pt' style='bold' name='Verdana' pitch='variable' truetype='true'
+ familyid='20' color='#fcba03'/></run></par>
+<table leftmargin='0' widthtype='fixedcenter' refwidth='0.7875in'><tablecolumn
+ width='0.7875in'/>
+<tablerow>
+<tablecell borderwidth='0px' bgcolor='#fcba03'>
+<pardef id='16' align='center' spacebefore='1.5' spaceafter='1.5' keepwithnext='true'
+ keeptogether='true'/>
+<par def='16'><run><font size='14pt' style='bold' name='Verdana' pitch='variable'
+ truetype='true' familyid='20' color='white'/></run><actionhotspot hotspotstyle='none'><code
+ event='click'><formula>@Environment("ToDo_View";"urgentView");
+@Command([RefreshWindow])</formula></code><run><font size='14pt' color='white'
+ style='bold' name='Verdana' pitch='variable' truetype='true' familyid='20'/><field
+ type='number' kind='computedfordisplay' name='UrgentTotal'><numberformat
+ format='general' digits='2' punctuated='false' parens='false' percent='false'
+ bytes='false'/><code event='defaultvalue'><formula>@Elements(@DbColumn("":"NoCache";"";"urgentView";1))</formula></code></field></run><run
+><font size='14pt' style='bold' name='Verdana' pitch='variable' truetype='true'
+ familyid='20' color='white'/></run></actionhotspot><run><font size='14pt'
+ style='bold' name='Verdana' pitch='variable' truetype='true' familyid='20'
+ color='white'/></run></par></tablecell></tablerow></table>
+<pardef id='17' align='center' hide='notes web mobile' keepwithnext='true'
+ keeptogether='true'/>
+<par def='17'><run><font size='14pt' style='bold' name='Verdana' pitch='variable'
+ truetype='true' familyid='20' color='#ffbf18'/></run></par></tablecell>
+<tablecell borderwidth='0px'>
+<pardef id='18' align='center' keepwithnext='true' keeptogether='true'/>
+<par def='18'><run><font size='14pt' name='Verdana' pitch='variable' truetype='true'
+ familyid='20'/></run><actionhotspot hotspotstyle='none' regionid='4'><code
+ event='click'><formula>@Environment("ToDo_View";"overdueView");
+@Command([RefreshWindow])</formula></code><picture width='202px' height='182px'
+ scaledheight='0.9479in' scaledwidth='1.0521in'><imageref name='overdue-dashboard.png'/></picture><run
+><font size='14pt' name='Verdana' pitch='variable' truetype='true' familyid='20'/></run></actionhotspot></par>
+<pardef id='19' align='center' spaceafter='1.5' keepwithnext='true' keeptogether='true'/>
+<par def='19'><region regionid='4' end='true'><run><font size='14pt' style='bold'
+ name='Verdana' pitch='variable' truetype='true' familyid='20' color='red'/>Overdue</run></region><run
+><font size='14pt' style='bold' name='Verdana' pitch='variable' truetype='true'
+ familyid='20' color='red'/></run></par>
+<table leftmargin='0' widthtype='fixedcenter' refwidth='0.7875in'><tablecolumn
+ width='0.7875in'/>
+<tablerow>
+<tablecell borderwidth='0px' bgcolor='red'>
+<pardef id='21' align='center' spacebefore='1.5' spaceafter='1.5' keepwithnext='true'
+ keeptogether='true'/>
+<par def='21'><run><font size='14pt' style='bold' name='Verdana' pitch='variable'
+ truetype='true' familyid='20' color='white'/></run><actionhotspot hotspotstyle='none'><code
+ event='click'><formula>@Environment("ToDo_View";"overdueView");
+@Command([RefreshWindow])</formula></code><run><font size='14pt' color='white'
+ style='bold' name='Verdana' pitch='variable' truetype='true' familyid='20'/><field
+ type='number' kind='computedfordisplay' name='OverdueTotal'><numberformat
+ format='general' digits='2' punctuated='false' parens='false' percent='false'
+ bytes='false'/><code event='defaultvalue'><formula>@Elements(@DbColumn("":"NoCache";"";"overdueView";1))</formula></code></field></run><run
+><font size='14pt' style='bold' name='Verdana' pitch='variable' truetype='true'
+ familyid='20' color='white'/></run></actionhotspot><run><font size='14pt'
+ style='bold' name='Verdana' pitch='variable' truetype='true' familyid='20'
+ color='white'/></run></par></tablecell></tablerow></table>
+<pardef id='22' align='center' hide='notes web mobile' keepwithnext='true'
+ keeptogether='true'/>
+<par def='22'><run><font size='14pt' style='bold' name='Verdana' pitch='variable'
+ truetype='true' familyid='20' color='red'/></run></par></tablecell>
+<tablecell borderwidth='0px'>
+<pardef id='23' align='center' keepwithnext='true' keeptogether='true'/>
+<par def='23'><run><font size='14pt' style='bold' name='Verdana' pitch='variable'
+ truetype='true' familyid='20' color='#2ccbd4'/></run><actionhotspot hotspotstyle='none'><code
+ event='click'><formula>@SetTargetFrame("NotesPreview");
+@Command([Compose];"todo")</formula></code><picture width='96px' height='91px'
+ scaledheight='0.4792in' scaledwidth='0.5000in'><imageref name='todo-new.png'/></picture><run
+><font size='14pt' style='bold' name='Verdana' pitch='variable' truetype='true'
+ familyid='20' color='#2ccbd4'/></run></actionhotspot><run><font size='14pt'
+ style='bold' name='Verdana' pitch='variable' truetype='true' familyid='20'
+ color='#2ccbd4'/></run></par>
+<par def='23'><run><font size='14pt' style='bold' name='Verdana' pitch='variable'
+ truetype='true' familyid='20' color='#2ccbd4'/></run><actionhotspot hotspotstyle='none'><code
+ event='click'><formula>@Environment("ToDo_View";"todosView");
+@Command([RefreshWindow])</formula></code><picture width='96px' height='91px'
+ scaledheight='0.4792in' scaledwidth='0.5000in'><imageref><code event='value'><formula
+>@If(@Environment("ToDo_View")="todosView";"todos-dashboard-selected.png";"todos-dashboard.png")</formula></code></imageref></picture><run
+><font size='14pt' style='bold' name='Verdana' pitch='variable' truetype='true'
+ familyid='20' color='#2ccbd4'/></run></actionhotspot><run><font size='14pt'
+ style='bold' name='Verdana' pitch='variable' truetype='true' familyid='20'
+ color='#2ccbd4'/>     </run><actionhotspot hotspotstyle='none'><code event='click'><formula
+>@Environment("ToDo_View";"completeView");
+@Command([RefreshWindow])</formula></code><picture width='91px' height='91px'
+ scaledheight='0.4792in' scaledwidth='0.4792in'><imageref><code event='value'><formula
+>@If(@Environment("ToDo_View")="completeView";"complete-dashboard-selected.png";"complete-dashboard.png")</formula></code></imageref></picture><run
+><font size='14pt' style='bold' name='Verdana' pitch='variable' truetype='true'
+ familyid='20' color='#2ccbd4'/></run></actionhotspot><run><font size='14pt'
+ style='bold' name='Verdana' pitch='variable' truetype='true' familyid='20'
+ color='#2ccbd4'/></run></par>
+<par def='23'><run><font size='14pt' style='bold' name='Verdana' pitch='variable'
+ truetype='true' familyid='20' color='#2ccbd4'/></run><actionhotspot hotspotstyle='none'><code
+ event='click'><formula>@Environment("ToDo_View";"calendarView");
+@Command([RefreshWindow])</formula></code><picture width='106px' height='91px'
+ scaledheight='0.4792in' scaledwidth='0.5521in'><imageref><code event='value'><formula
+>@If(@Environment("ToDo_View")="calendarView";"calendar-dashboard-selected.png";"calendar-dashboard.png")</formula></code></imageref></picture><run
+><font size='14pt' style='bold' name='Verdana' pitch='variable' truetype='true'
+ familyid='20' color='#2ccbd4'/></run></actionhotspot><run><font size='14pt'
+ style='bold' name='Verdana' pitch='variable' truetype='true' familyid='20'
+ color='#2ccbd4'/>     </run><actionhotspot hotspotstyle='none'><code event='click'><formula
+>@Environment("ToDo_View";"overdueView");
+@Command([RefreshWindow])</formula></code><picture width='101px' height='91px'
+ scaledheight='0.4792in' scaledwidth='0.4792in'><imageref><code event='value'><formula
+>@If(@Environment("ToDo_View")="overdueView";"overdue-dashboard-selected.png";"overdue-dashboard.png")</formula></code></imageref></picture><run
+><font size='14pt' style='bold' name='Verdana' pitch='variable' truetype='true'
+ familyid='20' color='#2ccbd4'/></run></actionhotspot><run><font size='14pt'
+ style='bold' name='Verdana' pitch='variable' truetype='true' familyid='20'
+ color='#2ccbd4'/></run></par>
+<pardef id='24' align='center' leftmargin='0.0597in' keepwithnext='true' keeptogether='true'/>
+<par def='24'><run><font size='14pt' style='bold' name='Verdana' pitch='variable'
+ truetype='true' familyid='20' color='#2ccbd4'/></run><actionhotspot hotspotstyle='none'><code
+ event='click'><formula>@Environment("ToDo_View";"incompleteView");
+@Command([RefreshWindow])</formula></code><picture width='91px' height='91px'
+ scaledheight='0.4792in' scaledwidth='0.4792in'><imageref><code event='value'><formula
+>@If(@Environment("ToDo_View")="incompleteView";"incomplete-dashboard-selected.png";"incomplete-dashboard.png")</formula></code></imageref></picture><run
+><font size='14pt' style='bold' name='Verdana' pitch='variable' truetype='true'
+ familyid='20' color='#2ccbd4'/></run></actionhotspot><run><font size='14pt'
+ style='bold' name='Verdana' pitch='variable' truetype='true' familyid='20'
+ color='#2ccbd4'/>     </run><actionhotspot hotspotstyle='none'><code event='click'><formula
+>@Environment("ToDo_View";"urgentView");
+@Command([RefreshWindow])</formula></code><picture width='91px' height='91px'
+ scaledheight='0.4792in' scaledwidth='0.5313in'><imageref><code event='value'><formula
+>@If(@Environment("ToDo_View")="urgentView";"urgent-dashboard-selected.png";"urgent-dashboard.png")</formula></code></imageref></picture><run
+><font size='14pt' style='bold' name='Verdana' pitch='variable' truetype='true'
+ familyid='20' color='#2ccbd4'/></run></actionhotspot><run><font size='14pt'
+ style='bold' name='Verdana' pitch='variable' truetype='true' familyid='20'
+ color='#2ccbd4'/></run></par></tablecell></tablerow></table>
+<pardef id='25' leftmargin='1in' tabs='L0.5000in L1in L1.5000in L2in L2.5000in L3in L3.5000in L4in'/>
+<par def='25'/></richtext></body>
+<item name='$$ScriptName' summary='false' sign='true'><text>dashboard</text></item></form>
+

@@ -1,0 +1,306 @@
+.xsp .todoOverdue {
+	color:#d9534f;
+}
+.xsp .todoUrgent {
+	color:#f0ad4e;
+}
+.xsp .todoComplete {
+	color:#5cb85c;
+}
+.xsp .todoIncomplete {
+	color:#337ab7;
+}
+.xsp .todoOverdueBg {
+	background-color:#d9534f;
+}
+.xsp .todoUrgentBg {
+	background-color:#f0ad4e;
+}
+.xsp .todoCompleteBg {
+	background-color:#5cb85c;
+}
+.xsp .todoIncompleteBg {
+	background-color:#337ab7;
+}
+
+.xsp .btnIncomplete {
+	background-color:#777777;
+	color:white;
+	border-color:#777777;
+}
+.xsp .btnIncomplete:hover {
+	background-color:#555555;
+	border-color:#555555;
+}
+
+.xsp .todoStatusIcon14{
+	font-size: 14pt;
+	position: relative;
+	top: 2px;
+}
+
+.dashBtn {
+	margin-bottom: 4px;
+}
+.buttonPanel {
+	margin: 20px 0px;
+}
+
+@media (max-width: 992px) {
+	.xsp .todoGlyphSize {
+		font-size:72pt !important;
+	}
+}
+
+.xspDataViewAuthor {
+	min-width:150px;
+}
+
+.xspDataViewDue {
+	min-width:120px;
+}
+
+@media (max-width: 768px) {
+	.dropdown-menu.xspDropdown {
+		text-align:center;
+	}
+	.dropdown-menu.xspDropdown input{
+		width: 50%;
+		display: inline;
+	}
+	.dropdown-menu.xspDropdown .xspDropdownLabel{
+		color:white;
+	}
+	.dropdown-menu.xspDropdown .alert {
+		float:none;
+		padding:4px;
+		margin-top:6px;
+		margin-bottom:0px;
+		display:block;
+	}
+	.xspNavbar .navbar-collapse .navbar-text {
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+	.xspDataViewPriority, .xspDataViewDue, .xspDataViewDetail {
+		display:none;
+	}
+	.xspDataViewAuthor {
+		min-width:120px;
+	}
+}
+
+@media (min-width: 768px) {
+	.navbar-collapse .navbar-nav {
+		float:right;
+		margin-left:20px;
+	}
+	.dropdown-menu.xspDropdown {
+		right:0;
+		left:auto;
+	}
+	.dropdown-menu.xspDropdown .alert {
+		float:right;
+		padding:4px;
+		margin-bottom:0px;
+	}
+}
+
+@media (max-width: 600px) {
+	.buttonPanel,
+	.dashPager {
+		text-align: center;
+	}
+	.buttonPanel,
+	.dashPager .pagination {
+		margin: 4px 0px;
+	}	
+	div.pull-right,
+	div.pull-left {
+		width: 100%;
+	}
+	.xsp .todoGlyphSize {
+		font-size:50pt !important;
+	}
+	
+	/* Fix padding for form on XS devices */
+	.xsp .xspFormTableContainer .form-table .control-label {
+		padding-left: 8px;
+	}
+	.xsp.dbootstrap .xspFormTableContainer {
+		padding: 8px;
+	}
+}
+
+.xsp .navbar-collapse {
+	text-align:center;
+}
+.xsp .navbar-collapse .navbar-right li {
+	display:inline-block;
+}
+.table.dataview td {
+	vertical-align: middle;
+}
+
+/* Styles for indicator colouring on navbar menu */
+.homeStyle .glyphicon-home.utilIcon,
+.todoStyle .glyphicon-th-list.utilIcon,
+.completeStyle .glyphicon-ok.utilIcon,
+.urgentStyle .glyphicon-exclamation-sign.utilIcon,
+.overdueStyle .glyphicon-warning-sign.utilIcon {
+	color: white;
+}
+
+.navbar-right .utilIcon{
+	padding-top:2px;
+}
+/* Fix colour of underlines on dashboard */
+.xspDash a:hover {
+	text-decoration: none;
+} 
+.xspDash a h3:hover {
+	text-decoration: underline;
+}
+
+.xspDropdown {
+	min-width:380px;
+	margin-top:12px;
+	border-top-left-radius:0px;
+	border-top-right-radius:0px;
+}
+@media (min-width: 768px) {
+	.xspDropdown {
+		min-width:380px;
+	}
+}
+
+.navbar-collapse .navbar-nav:hover {
+	cursor: default;
+}
+.dropdown .dropdown-toggle:hover {
+	cursor: pointer;
+}
+
+/* Set max width of new todo form */
+.xsp .xspFormTableContainer {
+	max-width: 580px;
+}
+/* Set warning alert style */
+.xsp .xspWarning {
+	max-width: 490px;
+	padding-right: 14px;
+}
+
+.dashboardContentPane {
+	min-height: 200px;
+}
+@media (max-width: 768px) {
+	.dashboardContentPane {
+		min-height: 328px;
+	}
+}
+@media (max-width: 600px) {
+	.dashboardContentPane {
+		min-height: 270px;
+	}
+}
+
+/* spin animation classes for loading icon */
+.glyphicon.glyphicon-repeat.spin {
+	padding: 10px;
+	float: right;
+	display:inline-block;
+}
+.spin {
+  filter: blur(0); /*fixes jumpiness in FF */
+  -webkit-animation: 1.0s spin linear infinite;
+  -moz-animation: 1.0s spin linear infinite;
+      -o-animation: 1.0s spin linear infinite;
+  animation: 1.0s spin linear infinite;
+     -webkit-transform-origin: 50% 50%;
+         transform-origin:50% 50%;
+         -ms-transform-origin:50% 50%; /* IE 9 */
+}
+
+@-moz-keyframes spin { 
+	100% { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin { 
+	100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin { 
+	100% { transform:rotate(360deg); }
+}
+
+/* Bootstrap 4 Styles */
+.xsp.bootstrap4 .todoIncomplete {
+	color:#0275d8;
+}
+.xsp.bootstrap4 .todoIncompleteBg {
+	background-color:#0275d8;
+}
+.xsp.bootstrap4 .dropdown-menu.xspDropdown .xspDropdownLabel{
+	color:#373a3c;
+}
+.xsp.bootstrap4 .navbar-nav.pull-xs-right .nav-link:hover,
+.xsp.bootstrap4 .navbar-nav.pull-xs-right .nav-link:focus {
+    background-color: transparent;
+}
+.xsp.bootstrap4 .navbar-dark .navbar-nav .nav-link:focus,
+.xsp.bootstrap4 .navbar-dark .navbar-nav .nav-link:hover {
+    color: white;
+}
+.xsp.bootstrap4 .navbar-collapse .pull-xs-right li {
+	display:inline-block;
+}
+.xsp.bootstrap4.homeStyle .glyphicon-home.utilIcon,
+.xsp.bootstrap4.todoStyle .glyphicon-th-list.utilIcon,
+.xsp.bootstrap4.completeStyle .glyphicon-ok.utilIcon,
+.xsp.bootstrap4.urgentStyle .glyphicon-exclamation-sign.utilIcon,
+.xsp.bootstrap4.overdueStyle .glyphicon-warning-sign.utilIcon {
+	color: white;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
+.xsp.bootstrap4 .glyphicon-home.utilIcon,
+.xsp.bootstrap4 .glyphicon-th-list.utilIcon,
+.xsp.bootstrap4 .glyphicon-ok.utilIcon,
+.xsp.bootstrap4 .glyphicon-exclamation-sign.utilIcon,
+.xsp.bootstrap4 .glyphicon-warning-sign.utilIcon {
+	padding: 0 0.5rem;
+	padding-top: 0.15rem;
+}
+.xsp.bootstrap4 .xspDropdown {
+	margin-top:13px;
+}
+/* Set max width of new todo form */
+.xsp.bootstrap4 .xspFormTableContainer {
+	max-width: 620px;
+}
+/* Set warning alert style */
+.xsp.bootstrap4 .xspWarning {
+	max-width: 620px;
+	padding-right: 1rem;
+}
+
+.xsp.bootstrap4 .xspNavbarContent .nav-custom{
+	padding: 0.425rem 1rem
+}
+
+.xsp.bootstrap4 .navbar-collapse .pull-right li {
+	display:inline-block;
+}
+
+.xsp.bootstrap4 .dropdown-menu.xspDropdown .xspDropdownLabel{
+	color:#373a3c;
+}
+
+.xsp.bootstrap4 .navbar-nav.pull-right .nav-link:hover,
+.xsp.bootstrap4 .navbar-nav.pull-right .nav-link:focus {
+    background-color: transparent;
+}
+
+.xsp.bootstrap4 .navbar-dark .navbar-nav .nav-link:focus,
+.xsp.bootstrap4 .navbar-dark .navbar-nav .nav-link:hover {
+    color: white;
+}

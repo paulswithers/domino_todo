@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xp:this.resources>
+		<xp:script src="/todoUtils.jss" clientSide="false"></xp:script>
+	</xp:this.resources>
+	<xp:this.data>
+		<xp:dominoDocument var="document1" formName="todo" ignoreRequestParams="true"
+			action="#{javascript: null == param.documentId ? 'newDocument' : 'openDocument';}"
+			documentId="#{javascript: null != param.documentId ? param.documentId : null;}">
+			<xp:this.databaseName>
+				<![CDATA[#{javascript:
+					return findDbUtil();
+				}]]>
+			</xp:this.databaseName>
+		</xp:dominoDocument>
+	</xp:this.data>
+	<xp:this.beforePageLoad>
+		<![CDATA[#{javascript:
+			var setScopeValues = function(doc) {
+				viewScope.isNew = document1.isNewNote();
+				
+				if(!viewScope.isNew) {
+					var duedate = new Date(doc.getItemValue("duedate").get(0).toJavaDate());
+					var complete = isComplete(doc.getItemValueString("completed"));
+					var overdue = isOverdue(complete, duedate);
+					var urgent = isUrgent(complete, duedate);
+					
+					viewScope.isComplete = complete;
+					viewScope.isOverdue  = overdue;
+					viewScope.isUrgent   = urgent;
+					viewScope.dueDate    = duedate;
+				}else{
+					viewScope.isComplete = false;
+					viewScope.isOverdue  = false
+					viewScope.isUrgent   = false;
+					viewScope.dueDate    = "";
+				}
+			}
+		}]]>
+	</xp:this.beforePageLoad>
+	<xc:simpleLayout>
+		<xp:panel xp:key="content" id="panel1">
+			<xp:panel id="hiddenContent" style="display:none;">
+				<xp:panel id="hiddenContentInner"
+					styleClass="hiddenContentInner">
+				</xp:panel>
+			</xp:panel>
+			<xe:formTable id="todoForm">
+				<xe:formRow id="statusRow" label="Status"
+					labelPosition="left" style="font-size:16pt;">
+					<xp:div id="statusContainer">
+						<xp:this.style>
+							<![CDATA[#{javascript:
+								var baseStyle = "font-weight:bold;";
+								
+								if(viewScope.isNew == null) {
+									setScopeValues(document1);
+								}
+								
+								if(viewScope.isNew) {
+									return baseStyle;
+								}
+								
+								if(viewScope.isComplete) {
+									return baseStyle + "color:#5cb85c;";
+								}else{
+									if(!viewScope.isOverdue) {
+										if(viewScope.isUrgent) {
+											return baseStyle + "color:#f0ad4e;";
+										}else{
+											return baseStyle + "color:#5bc0de;";
+										}
+									}
+									if(viewScope.isOverdue) {
+										return baseStyle + "color:#d9534f;";
+									}
+								}
+							}]]>
+						</xp:this.style>
+						<xe:switchFacet id="switchFacet1">
+							<xp:this.selectedFacet><![CDATA[#{javascript:
+								if(viewScope.isNew == null) {
+									setScopeValues(document1);
+								}
+								
+								if(!viewScope.isNew) {
+									if(viewScope.isComplete){
+										return "completeIcon";
+									}
+									if(viewScope.isOverdue){
+										return "overdueIcon";
+									}
+									if(viewScope.isUrgent){
+										return "urgentIcon";
+									}
+									return "incompleteIcon";
+								}
+								}]]>
+							</xp:this.selectedFacet>
+							<xe:this.facets>
+								<xp:div
+									styleClass="glyphicon glyphicon-ok-sign todoStatusIcon14"
+									style="display:inline-block;" xp:key="completeIcon">
+								</xp:div>
+								<xp:div
+									styleClass="glyphicon glyphicon-exclamation-sign todoStatusIcon14 todoStatusIconAdjust"
+									style="display:inline-block;" xp:key="urgentIcon">
+								</xp:div>
+								<xp:div
+									styleClass="glyphicon glyphicon-warning-sign todoStatusIcon14 todoStatusIconAdjust"
+									style="display:inline-block;" xp:key="overdueIcon">
+								</xp:div>
+								<xp:div
+									styleClass="glyphicon glyphicon-remove-sign todoStatusIcon14"
+									style="display:inline-block;" xp:key="incompleteIcon">
+								</xp:div>
+							</xe:this.facets>
+						</xe:switchFacet>
+						<xp:text escape="true" id="statusText">
+							<xp:this.value>
+								<![CDATA[#{javascript:
+									if(viewScope.isNew == null) {
+										setScopeValues(document1);
+									}
+									
+									if(viewScope.isNew) {
+										return "New";
+									}
+									
+									if(viewScope.isComplete) {
+										return "Completed";
+									}else{
+										if(!viewScope.isOverdue) {
+											if(viewScope.isUrgent) {
+												return "Urgent! Under 3 days until due date.";
+											}else{
+												return "Incomplete";
+											}
+										}
+										if(viewScope.isOverdue) {
+											return "Overdue!";
+										}
+									}
+								}]]>
+							</xp:this.value>
+						</xp:text>
+					</xp:div>
+				</xe:formRow>
+				<xe:formRow id="authorRow" label="Author" labelPosition="left">
+					<xp:text id="author">
+						<xe:this.value>
+							<![CDATA[#{javascript:
+								if(viewScope.isNew) {
+									return sessionScope.user;
+								}else{
+									return @Name("[CN]", @Author());
+								}
+							}]]>
+						</xe:this.value>
+					</xp:text>
+				</xe:formRow>
+				<xe:formRow id="taskNameRow" label="Task Name" labelPosition="left">
+					<xp:inputText id="taskName" value="#{document1.name}" required="true">
+						<xp:this.validators>
+							<xp:validateRequired message="Task name is a required field.">
+							</xp:validateRequired>
+						</xp:this.validators>
+					</xp:inputText>
+				</xe:formRow>
+				<xe:formRow id="descriptionRow" label="Description" labelPosition="left">
+					<xp:inputTextarea id="description" value="#{document1.description}">
+					</xp:inputTextarea>
+				</xe:formRow>
+				<xe:formRow id="dateRow" label="Due Date" labelPosition="left">
+					<xp:inputText id="dueDate" value="#{document1.duedate}" required="true">
+						<xp:this.validators>
+							<xp:validateRequired message="Due date is a required field.">
+							</xp:validateRequired>
+						</xp:this.validators>
+						<xp:dateTimeHelper id="dateTimeHelper1"></xp:dateTimeHelper>
+						<xp:this.converter>
+							<xp:convertDateTime dateStyle="short" timeStyle="short" type="both">
+							</xp:convertDateTime>
+						</xp:this.converter>
+					</xp:inputText>
+				</xe:formRow>
+				<xe:formRow id="priorityRow" label="Priority" labelPosition="left">
+					<xp:comboBox id="priority" value="#{document1.priority}">
+						<xp:selectItem itemLabel="Low"></xp:selectItem>
+						<xp:selectItem itemLabel="Medium"></xp:selectItem>
+						<xp:selectItem itemLabel="High"></xp:selectItem>
+					</xp:comboBox>
+				</xe:formRow>
+				<xe:formRow id="formRow7" style="display:none;">
+					<xp:inputText id="hiddenStatus" value="#{document1.completed}" defaultValue="false">
+					</xp:inputText>
+				</xe:formRow>
+			</xe:formTable>
+			<xp:panel id="buttonPanelRow" styleClass="buttonPanel">
+				<xp:button value="Save" id="saveTaskBtn" styleClass="btn-primary">
+					<xp:this.rendered><![CDATA[#{javascript:return document1.isEditable();}]]>
+					</xp:this.rendered>
+					<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+						<xp:this.action>
+							<xp:actionGroup>
+								<xp:saveDocument var="document1"></xp:saveDocument>
+								<xp:openPage name="/dashboard.xsp"></xp:openPage>
+							</xp:actionGroup>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+				<xp:button value="Edit" id="editTaskBtn">
+					<xp:this.rendered>
+						<![CDATA[#{javascript:return (userBean.accessLevel >= lotus.domino.ACL.LEVEL_EDITOR) && !document1.isEditable();}]]>
+					</xp:this.rendered>
+					<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+						<xp:this.action>
+							<xp:changeDocumentMode mode="edit" var="document1">
+							</xp:changeDocumentMode>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+				<xp:button value="Mark Complete" id="completeTaskBtn" styleClass="btn-success">
+					<xp:this.rendered><![CDATA[#{javascript:return !viewScope.isNew && document1.isEditable() && !viewScope.isComplete;}]]>
+					</xp:this.rendered>
+					<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+						<xp:this.action>
+							<![CDATA[#{javascript:document1.setValue("completed", "true");viewScope.isComplete = true;}]]>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+				<xp:button value="Mark Incomplete" id="incompleteTaskBtn" styleClass="btnIncomplete">
+					<xp:this.rendered><![CDATA[#{javascript:return !viewScope.isNew && document1.isEditable() && viewScope.isComplete;}]]>
+					</xp:this.rendered>
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action>
+							<![CDATA[#{javascript:document1.setValue("completed", "false");viewScope.isComplete = false;}]]>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+				<xp:button value="Delete" id="deleteTaskBtn" styleClass="btn-danger">
+					<xp:this.rendered>
+						<![CDATA[#{javascript:return userBean.canDeleteDocs && !viewScope.isNew;}]]>
+					</xp:this.rendered>
+					<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+						<xp:this.action>
+							<xp:deleteDocument name="/dashboard.xsp"
+								message="Are you sure you want to delete the ToDo"
+								var="document1">
+							</xp:deleteDocument>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+				<xp:button value="Cancel" id="cancelTaskBtn" styleClass="btn-warning">
+					<xp:eventHandler event="onclick" submit="true" refreshMode="complete" immediate="true">
+						<xp:this.action>
+							<xp:openPage name="/dashboard.xsp"></xp:openPage>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+			</xp:panel>
+		</xp:panel>
+	</xc:simpleLayout>
+</xp:view>

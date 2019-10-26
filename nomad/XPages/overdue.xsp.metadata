@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><note xmlns="http://www.lotus.com/dxl" class="form" replicaid="80257E5A004A751B" version="11.0">
+<noteinfo noteid="1e2" sequence="184" unid="FCE6C4614B56FCCC80257DB70075933E">
+<created><datetime>20141223T212414,06+00</datetime></created>
+<modified><datetime dst="true">20191020T085116,02-05</datetime></modified>
+<revised><datetime dst="true">20191020T085116,01-05</datetime></revised>
+<lastaccessed><datetime dst="true">20191020T085116,01-05</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20191020T083708,91-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=XPagesAdmin/O=Bluemix</name><name>CN=admin/O=IBM</name><name>CN=BoilerPlate/O=Bluemix</name><name>CN=admin/O=IBM</name><name>CN=Paul S Withers/O=paulswithers</name></updatedby>
+<wassignedby><name>CN=Paul S Withers/O=paulswithers</name></wassignedby>
+<item name="$Flags"><text>gC~4K</text></item>
+<item name="$TITLE"><text>overdue.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5.1</text></item>
+
+
+
+
+
+<item name="$FileNames" sign="true"><text>overdue.xsp</text></item>
+
+</note>

@@ -1,0 +1,6 @@
+# Compiled class file
+*.class
+
+nomad/.settings/*
+nomad/.classpath
+nomad/.project

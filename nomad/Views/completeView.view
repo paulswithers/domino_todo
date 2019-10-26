@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<view name='completeView' xmlns='http://www.lotus.com/dxl' version='11.0'
+ replicaid='80257E5A004A751B' showinmenu='false' noreplace='true' publicaccess='false'
+ designerversion='8.5.3' unreadmarks='none' onopengoto='lastopened' onrefresh='refresh'
+ headers='beveled' opencollapsed='false' showresponsehierarchy='true' showmargin='true'
+ shrinkrows='false' extendlastcolumn='false' showhierarchies='false' unreadcolor='black'
+ rowlinecount='1' headerlinecount='1' rowspacing='1' bgcolor='white' totalscolor='black'
+ headerbgcolor='white' boldunreadrows='false' evaluateactions='false' allownewdocuments='false'
+ allowcustomizations='true' hidemarginborder='false' marginwidth='0px' marginbgcolor='white'
+ uniquekeys='false'>
+<noteinfo noteid='17a' unid='C7F4FC872D34DDB580257E99003EB09C' sequence='13'>
+<created><datetime dst='true'>20150806T122444,44+01</datetime></created>
+<modified><datetime dst='true'>20191026T053731,45-05</datetime></modified>
+<revised><datetime dst='true'>20191026T053731,44-05</datetime></revised>
+<lastaccessed><datetime dst='true'>20191026T053731,44-05</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20191020T083704,46-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Paul S Withers/O=paulswithers</name></updatedby>
+<wassignedby><name>CN=Paul S Withers/O=paulswithers</name></wassignedby><code
+ event='selection'><formula>SELECT (form = "todo" &amp; completed="true")</formula></code>
+<column resort='both' hidedetailrows='false' itemname='name' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
+ title='To-Do'><font size='9pt' style='bold'/></columnheader></column>
+<column hidedetailrows='false' itemname='description' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='Description'><font size='9pt' style='bold'/></columnheader></column>
+<column resort='both' hidedetailrows='false' itemname='duedate' width='10'
+ resizable='true' separatemultiplevalues='false' sortnoaccent='false' sortnocase='true'
+ showaslinks='false'><columnheader title='Due'><font size='9pt' style='bold'/></columnheader></column>
+<column resort='both' hidedetailrows='false' itemname='priority' width='10'
+ resizable='true' separatemultiplevalues='false' sortnoaccent='false' sortnocase='true'
+ showaslinks='false'><columnheader title='Priority'><font size='9pt' style='bold'/></columnheader></column>
+<column resort='both' hidedetailrows='false' itemname='$4' width='10' resizable='true'
+ separatemultiplevalues='false' sortnoaccent='false' sortnocase='true' showaslinks='false'><columnheader
+ title='Author'><font size='9pt' style='bold'/></columnheader><code event='value'><formula
+>@Name([CN]; @Author)</formula></code></column></view>
+

@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex" >
+	<xp:panel id="mainPanel">
+		<xe:dynamicContent id="dynContent1" defaultFacet="default-navbar" useHash="true">
+			<xe:this.facets>
+				<xp:panel id="default-navbar" xp:key="default-navbar">
+					<xp:panel styleClass="container">
+						<xe:navbar id="navBar1" headingText="Default Navbar">
+							<xe:this.navbarAfterLinks>
+								<xe:pageTreeNode page="/navbar.xsp"
+									label="Navbar home">
+								</xe:pageTreeNode>
+								<xe:basicLeafNode label="ibm.com"
+									href="http://www.ibm.com">
+								</xe:basicLeafNode>
+								<xe:basicContainerNode label="Menu">
+									<xe:this.children>
+										<xe:pageTreeNode page="/navbar.xsp"
+											label="Navbar home">
+										</xe:pageTreeNode>
+										<xe:basicLeafNode label="ibm.com"
+											href="http://www.ibm.com">
+										</xe:basicLeafNode>
+									</xe:this.children>
+								</xe:basicContainerNode>
+							</xe:this.navbarAfterLinks>
+							<xp:label value="Navbar Demo" id="label1"></xp:label>
+							<xp:link escape="true" text="fixed-top"
+								id="link1">
+								<xp:eventHandler event="onclick" submit="true"
+									refreshMode="partial" refreshId="dynContent1">
+									<xp:this.action>
+										<xe:changeDynamicContentAction
+											for="dynContent1" facetName="fixtop">
+										</xe:changeDynamicContentAction>
+									</xp:this.action>
+								</xp:eventHandler>
+							</xp:link>
+							<xp:link escape="true" text="fixed-bottom"
+								id="link2">
+								<xp:eventHandler event="onclick" submit="true"
+									refreshMode="partial" refreshId="dynContent1">
+									<xp:this.action>
+										<xe:changeDynamicContentAction
+											for="dynContent1" facetName="fixbottom">
+										</xe:changeDynamicContentAction>
+									</xp:this.action>
+								</xp:eventHandler>
+							</xp:link>
+							<xp:link escape="true" text="static-top"
+								id="link12">
+								<xp:eventHandler event="onclick" submit="true"
+									refreshMode="partial" refreshId="dynContent1">
+									<xp:this.action>
+										<xe:changeDynamicContentAction
+											for="dynContent1" facetName="statictop">
+										</xe:changeDynamicContentAction>
+									</xp:this.action>
+								</xp:eventHandler>
+							</xp:link>
+						</xe:navbar>
+					</xp:panel>
+					<xc:textWedge containerType="container"></xc:textWedge>
+				</xp:panel>
+		
+				<xp:panel id="fixtop" xp:key="fixtop">
+					<xp:panel id="navContainer1">
+						<xe:navbar id="navbar1" headingText="Fixed Top"
+							inverted="true" fixed="fixed-top" pageWidth="fixed"
+							headingStyle="font-weight:bold;">
+							<xe:this.navbarBeforeLinks>
+								<xe:pageTreeNode page="/navbar.xsp"
+									label="Navbar home">
+								</xe:pageTreeNode>
+								<xe:basicLeafNode label="ibm.com"
+									href="http://www.ibm.com">
+								</xe:basicLeafNode>
+								<xe:basicContainerNode label="Menu">
+									<xe:this.children>
+										<xe:pageTreeNode page="/navbar.xsp"
+											label="Navbar home">
+										</xe:pageTreeNode>
+										<xe:basicLeafNode label="ibm.com"
+											href="http://www.ibm.com">
+										</xe:basicLeafNode>
+									</xe:this.children>
+								</xe:basicContainerNode>
+							</xe:this.navbarBeforeLinks>
+							<xp:label value="Navbar Demo" id="label2"></xp:label>
+							<xp:link escape="true" text="fixed-bottom"
+								id="link4">
+								<xp:eventHandler event="onclick" submit="true"
+									refreshMode="partial" refreshId="dynContent1">
+									<xp:this.action>
+										<xe:changeDynamicContentAction
+											for="dynContent1" facetName="fixbottom">
+										</xe:changeDynamicContentAction>
+									</xp:this.action>
+								</xp:eventHandler>
+							</xp:link>
+							<xp:link escape="true" text="static-top"
+								id="link9">
+								<xp:eventHandler event="onclick" submit="true"
+									refreshMode="partial" refreshId="dynContent1">
+									<xp:this.action>
+										<xe:changeDynamicContentAction
+											for="dynContent1" facetName="statictop">
+										</xe:changeDynamicContentAction>
+									</xp:this.action>
+								</xp:eventHandler>
+							</xp:link>
+							<xp:link escape="true" text="default" id="link14">
+								<xp:eventHandler event="onclick" submit="true"
+									refreshMode="partial" refreshId="dynContent1">
+									<xp:this.action>
+										<xe:changeDynamicContentAction
+											for="dynContent1" facetName="default-navbar">
+										</xe:changeDynamicContentAction>
+									</xp:this.action>
+								</xp:eventHandler>
+							</xp:link>
+						</xe:navbar>
+					</xp:panel>
+					<xc:textWedge containerType="container"></xc:textWedge>
+				</xp:panel>
+		
+				<xp:panel id="fixbottom" xp:key="fixbottom">
+					<xp:panel id="navContainer2">
+						<xe:navbar id="navbar2"
+							headingText="Fixed Bottom" inverted="true" fixed="fixed-bottom"
+							headingStyle="font-weight:bold;" pageWidth="fluid">
+							<xp:label value="Navbar Demo" id="label3"></xp:label>
+							<xp:link escape="true" text="fixed-top"
+								id="link5">
+								<xp:eventHandler event="onclick"
+									submit="true" refreshMode="partial" refreshId="dynContent1">
+									<xp:this.action>
+										<xe:changeDynamicContentAction
+											for="dynContent1" facetName="fixtop">
+										</xe:changeDynamicContentAction>
+									</xp:this.action>
+								</xp:eventHandler>
+							</xp:link>
+							<xp:link escape="true" text="static-top"
+								id="link10">
+								<xp:eventHandler event="onclick"
+									submit="true" refreshMode="partial" refreshId="dynContent1">
+									<xp:this.action>
+										<xe:changeDynamicContentAction
+											for="dynContent1" facetName="statictop">
+										</xe:changeDynamicContentAction>
+									</xp:this.action>
+								</xp:eventHandler>
+							</xp:link>
+							<xp:link escape="true" text="default"
+								id="link15">
+								<xp:eventHandler event="onclick"
+									submit="true" refreshMode="partial" refreshId="dynContent1">
+									<xp:this.action>
+										<xe:changeDynamicContentAction
+											for="dynContent1" facetName="default-navbar">
+										</xe:changeDynamicContentAction>
+									</xp:this.action>
+								</xp:eventHandler>
+							</xp:link>
+							<xp:div styleClass="navbar-form">
+								<xp:inputText id="inputText1"></xp:inputText>
+								<xp:button value="Search"
+									id="button2">
+								</xp:button>
+							</xp:div>
+						</xe:navbar>
+					</xp:panel>
+					<xc:textWedge containerType="container-fluid"></xc:textWedge>
+				</xp:panel>
+		
+				<xp:panel id="panel1" xp:key="statictop">
+					<xp:panel id="navContainer3">
+						<xe:navbar id="navbar3" headingText="Static Top"
+							inverted="false" fixed="unfixed-top"
+							headingStyle="font-weight:bold;">
+							<xe:this.navbarBeforeLinks>
+								<xe:pageTreeNode page="/navbar.xsp"
+									label="Navbar home">
+								</xe:pageTreeNode>
+								<xe:basicLeafNode label="ibm.com"
+									href="http://www.ibm.com">
+								</xe:basicLeafNode>
+								<xe:basicContainerNode label="Menu">
+									<xe:this.children>
+										<xe:basicLeafNode label="fixed top"
+											href="#content=fixtop">
+										</xe:basicLeafNode>
+										<xe:basicLeafNode label="fixed bottom"
+											href="#content=fixbottom">
+										</xe:basicLeafNode>
+										<xe:basicLeafNode label="default"
+											href="#content=default-navbar">
+										</xe:basicLeafNode>
+										<xe:basicLeafNode label="multiple"
+											href="#content=multiple">
+										</xe:basicLeafNode>
+									</xe:this.children>
+								</xe:basicContainerNode>
+							</xe:this.navbarBeforeLinks>
+							<xe:this.navbarAfterLinks>
+								<xe:pageTreeNode page="/navbar.xsp"
+									label="Navbar home">
+								</xe:pageTreeNode>
+								<xe:basicLeafNode label="ibm.com"
+									href="http://www.ibm.com">
+								</xe:basicLeafNode>
+								<xe:basicContainerNode label="Menu">
+									<xe:this.children>
+										<xe:basicLeafNode label="fixed top"
+											href="#content=fixtop">
+										</xe:basicLeafNode>
+										<xe:basicLeafNode label="fixed bottom"
+											href="#content=fixbottom">
+										</xe:basicLeafNode>
+										<xe:basicLeafNode label="default"
+											href="#content=default-navbar">
+										</xe:basicLeafNode>
+										<xe:basicLeafNode label="multiple"
+											href="#content=multiple">
+										</xe:basicLeafNode>
+									</xe:this.children>
+								</xe:basicContainerNode>
+							</xe:this.navbarAfterLinks>
+							<xp:label value="Navbar Demo" id="label4"></xp:label>
+							<xp:div styleClass="navbar-form">
+								<xp:inputText id="inputText3"></xp:inputText>
+								<xp:button value="Search" id="button3"></xp:button>
+							</xp:div>
+						</xe:navbar>
+					</xp:panel>
+					<xc:textWedge containerType="container"></xc:textWedge>
+				</xp:panel>
+				
+				<xp:panel id="panel2" xp:key="multiple">
+					<xe:navbar id="navbar4" headingText="Fixed Top"
+						inverted="true" fixed="fixed-top" pageWidth="fixed"
+						headingStyle="font-weight:bold;">
+						<xe:this.navbarBeforeLinks>
+							<xe:pageTreeNode page="/navbar.xsp"
+								label="Navbar home">
+							</xe:pageTreeNode>
+							<xe:basicLeafNode label="ibm.com"
+								href="http://www.ibm.com">
+							</xe:basicLeafNode>
+							<xe:basicContainerNode label="Menu">
+								<xe:this.children>
+									<xe:pageTreeNode page="/navbar.xsp"
+										label="Navbar home">
+									</xe:pageTreeNode>
+									<xe:basicLeafNode label="ibm.com"
+										href="http://www.ibm.com">
+									</xe:basicLeafNode>
+								</xe:this.children>
+							</xe:basicContainerNode>
+						</xe:this.navbarBeforeLinks>
+						<xp:label value="Navbar Demo" id="label5"></xp:label>
+						<xp:link escape="true" text="fixed-bottom"
+							id="link3">
+							<xp:eventHandler event="onclick" submit="true"
+								refreshMode="partial" refreshId="dynContent1">
+								<xp:this.action>
+									<xe:changeDynamicContentAction
+										for="dynContent1" facetName="fixbottom">
+									</xe:changeDynamicContentAction>
+								</xp:this.action>
+							</xp:eventHandler>
+						</xp:link>
+						<xp:link escape="true" text="static-top"
+							id="link6">
+							<xp:eventHandler event="onclick" submit="true"
+								refreshMode="partial" refreshId="dynContent1">
+								<xp:this.action>
+									<xe:changeDynamicContentAction
+										for="dynContent1" facetName="statictop">
+									</xe:changeDynamicContentAction>
+								</xp:this.action>
+							</xp:eventHandler>
+						</xp:link>
+						<xp:link escape="true" text="default" id="link7">
+							<xp:eventHandler event="onclick" submit="true"
+								refreshMode="partial" refreshId="dynContent1">
+								<xp:this.action>
+									<xe:changeDynamicContentAction
+										for="dynContent1" facetName="default-navbar">
+									</xe:changeDynamicContentAction>
+								</xp:this.action>
+							</xp:eventHandler>
+						</xp:link>
+					</xe:navbar>
+					<xe:navbar id="navbar5"
+						headingText="Fixed Bottom" inverted="true" fixed="fixed-bottom"
+						headingStyle="font-weight:bold;" pageWidth="fluid">
+						<xp:label value="Navbar Demo" id="label6"></xp:label>
+						<xp:link escape="true" text="fixed-top"
+							id="link8">
+							<xp:eventHandler event="onclick"
+								submit="true" refreshMode="partial" refreshId="dynContent1">
+								<xp:this.action>
+									<xe:changeDynamicContentAction
+										for="dynContent1" facetName="fixtop">
+									</xe:changeDynamicContentAction>
+								</xp:this.action>
+							</xp:eventHandler>
+						</xp:link>
+						<xp:link escape="true" text="static-top"
+							id="link11">
+							<xp:eventHandler event="onclick"
+								submit="true" refreshMode="partial" refreshId="dynContent1">
+								<xp:this.action>
+									<xe:changeDynamicContentAction
+										for="dynContent1" facetName="statictop">
+									</xe:changeDynamicContentAction>
+								</xp:this.action>
+							</xp:eventHandler>
+						</xp:link>
+						<xp:link escape="true" text="default"
+							id="link13">
+							<xp:eventHandler event="onclick"
+								submit="true" refreshMode="partial" refreshId="dynContent1">
+								<xp:this.action>
+									<xe:changeDynamicContentAction
+										for="dynContent1" facetName="default-navbar">
+									</xe:changeDynamicContentAction>
+								</xp:this.action>
+							</xp:eventHandler>
+						</xp:link>
+						<xp:div styleClass="navbar-form">
+							<xp:inputText id="inputText2"></xp:inputText>
+							<xp:button value="Search"
+								id="button1">
+							</xp:button>
+						</xp:div>
+					</xe:navbar>
+					<xc:textWedge containerType="container"></xc:textWedge>
+					<xp:panel styleClass="container">
+						<xe:navbar id="navbar6" headingText="Default Navbar">
+							<xe:this.navbarAfterLinks>
+								<xe:pageTreeNode page="/navbar.xsp"
+									label="Navbar home">
+								</xe:pageTreeNode>
+								<xe:basicLeafNode label="ibm.com"
+									href="http://www.ibm.com">
+								</xe:basicLeafNode>
+								<xe:basicContainerNode label="Menu">
+									<xe:this.children>
+										<xe:pageTreeNode page="/navbar.xsp"
+											label="Navbar home">
+										</xe:pageTreeNode>
+										<xe:basicLeafNode label="ibm.com"
+											href="http://www.ibm.com">
+										</xe:basicLeafNode>
+									</xe:this.children>
+								</xe:basicContainerNode>
+							</xe:this.navbarAfterLinks>
+							<xp:label value="Navbar Demo" id="label7"></xp:label>
+							<xp:link escape="true" text="fixed-top"
+								id="link16">
+								<xp:eventHandler event="onclick" submit="true"
+									refreshMode="partial" refreshId="dynContent1">
+									<xp:this.action>
+										<xe:changeDynamicContentAction
+											for="dynContent1" facetName="fixtop">
+										</xe:changeDynamicContentAction>
+									</xp:this.action>
+								</xp:eventHandler>
+							</xp:link>
+							<xp:link escape="true" text="fixed-bottom"
+								id="link17">
+								<xp:eventHandler event="onclick" submit="true"
+									refreshMode="partial" refreshId="dynContent1">
+									<xp:this.action>
+										<xe:changeDynamicContentAction
+											for="dynContent1" facetName="fixbottom">
+										</xe:changeDynamicContentAction>
+									</xp:this.action>
+								</xp:eventHandler>
+							</xp:link>
+							<xp:link escape="true" text="static-top"
+								id="link18">
+								<xp:eventHandler event="onclick" submit="true"
+									refreshMode="partial" refreshId="dynContent1">
+									<xp:this.action>
+										<xe:changeDynamicContentAction
+											for="dynContent1" facetName="statictop">
+										</xe:changeDynamicContentAction>
+									</xp:this.action>
+								</xp:eventHandler>
+							</xp:link>
+						</xe:navbar>
+					</xp:panel>
+					<xc:textWedge containerType="container"></xc:textWedge>
+				</xp:panel>
+			</xe:this.facets>
+		</xe:dynamicContent>
+	</xp:panel>
+</xp:view>

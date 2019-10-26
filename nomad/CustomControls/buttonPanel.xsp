@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:panel id="innerButtonPanel" styleClass="buttonPanel">
+		<xp:button value="New ToDo" id="newBtn" styleClass="btn-primary dashBtn">
+			<xp:this.rendered><![CDATA[#{javascript:
+				return userBean.canCreateDocs;
+			}]]></xp:this.rendered>
+			<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+				<xp:this.action>
+					<xp:openPage name="/todoDoc.xsp" target="newDocument">
+					</xp:openPage>
+				</xp:this.action>
+			</xp:eventHandler>
+		</xp:button>
+		<xp:button value="Delete" id="deleteBtn" styleClass="btn-danger dashBtn">
+			<xp:this.rendered><![CDATA[#{javascript:
+				return userBean.canDeleteDocs;
+			}]]></xp:this.rendered>
+			<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+				<xp:this.action>
+					<xp:deleteSelectedDocuments view="#{javascript:return viewScope.pageName + 'DataView';}"
+						message="Are you sure you want to delete the selected ToDos?">
+					</xp:deleteSelectedDocuments>
+				</xp:this.action>
+			</xp:eventHandler>
+		</xp:button>
+		<xp:button value="Mark Complete" id="completedBtn" styleClass="btn-success dashBtn">
+			<xp:this.rendered>
+				<![CDATA[#{javascript:return (userBean.accessLevel >= lotus.domino.ACL.LEVEL_EDITOR);}]]>
+			</xp:this.rendered>
+			<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+				<xp:this.action>
+					<![CDATA[#{javascript:
+						var view1 = getComponent(viewScope.pageName + "DataView");
+						var docs = view1.getSelectedIds();
+						for(var i=0;i < docs.length; i++){
+							var docId=docs[i];
+							var doc:NotesDocument=getDBObj().getDocumentByID(docId);
+							doc.replaceItemValue("completed", "true");
+							doc.save();
+						}
+					}]]>
+				</xp:this.action>
+			</xp:eventHandler>
+		</xp:button>
+		<xp:button value="Mark Incomplete" id="incompleteBtn" styleClass="btnIncomplete dashBtn">
+			<xp:this.rendered>
+				<![CDATA[#{javascript:return (userBean.accessLevel >= lotus.domino.ACL.LEVEL_EDITOR);}]]>
+			</xp:this.rendered>
+			<xp:eventHandler event="onclick" submit="true" refreshMode="complete">
+				<xp:this.action>
+					<![CDATA[#{javascript:
+						var view1 = getComponent(viewScope.pageName + "DataView");
+						var docs = view1.getSelectedIds();
+						if(docs.length < 1) {
+							return;
+						}
+						for(var i=0;i < docs.length; i++){
+							var docId=docs[i];
+							var doc:NotesDocument=getDBObj().getDocumentByID(docId);
+							doc.replaceItemValue("completed", "false");
+							doc.save();
+						}
+					}]]>
+				</xp:this.action>
+			</xp:eventHandler>
+		</xp:button>
+	</xp:panel>
+</xp:view>

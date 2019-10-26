@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xp:this.resources>
+		<xp:dojoModule name="extlib.dijit.Loading"></xp:dojoModule>
+	</xp:this.resources>
+	<xe:djContentPane id="djContentPane1" partialRefresh="true" styleClass="dashboardContentPane">
+		<xe:dashboard id="mainDashboard" style="background-color: #eeeeee;border-radius: 8px;">
+			<xe:this.dashNodes>
+				<xe:dashNode sizeLarge="3" sizeMedium="3" sizeSmall="6" sizeExtraSmall="6"
+					labelText="ToDo" labelStyleClass="todoIncomplete" labelHref="/todos.xsp"
+					iconEnabled="true" iconSize="100pt" icon="glyphicon-th-list todoIncomplete todoGlyphSize"
+					badgeStyleClass="todoIncompleteBg" badgeEnabled="true">
+					<xe:this.badgeLabel>
+						<![CDATA[#{javascript:
+							return getIncompleteCount();
+						}]]>
+					</xe:this.badgeLabel>
+				</xe:dashNode>
+				<xe:dashNode sizeLarge="3" sizeMedium="3" sizeSmall="6" sizeExtraSmall="6"
+					labelText="Completed" labelStyleClass="todoComplete" labelHref="/complete.xsp"
+					iconEnabled="true" iconSize="100pt" icon="glyphicon-ok todoComplete todoGlyphSize"
+					badgeStyleClass="todoCompleteBg" badgeEnabled="true">
+					<xe:this.badgeLabel>
+						<![CDATA[#{javascript:
+							return getCompleteCount();
+						}]]>
+					</xe:this.badgeLabel>
+				</xe:dashNode>
+				<xe:dashNode sizeLarge="3" sizeMedium="3" sizeSmall="6" sizeExtraSmall="6"
+					labelText="Urgent" labelStyleClass="todoUrgent" labelHref="/urgent.xsp"
+					iconEnabled="true" iconSize="100pt" icon="glyphicon-exclamation-sign todoUrgent todoGlyphSize"
+					badgeStyleClass="todoUrgentBg" badgeEnabled="true">
+					<xe:this.badgeLabel>
+						<![CDATA[#{javascript:
+							return getUrgentCount();
+						}]]>
+					</xe:this.badgeLabel>
+				</xe:dashNode>
+				<xe:dashNode sizeLarge="3" sizeMedium="3" sizeSmall="6" sizeExtraSmall="6"
+					labelStyleClass="todoOverdue" labelText="Overdue" labelHref="/overdue.xsp"
+					iconSize="100pt" iconEnabled="true" icon="glyphicon-warning-sign todoOverdue todoGlyphSize"
+					badgeStyleClass="todoOverdueBg" badgeEnabled="true">
+					<xe:this.badgeLabel>
+						<![CDATA[#{javascript:
+							return getOverdueCount();
+						}]]>
+					</xe:this.badgeLabel>
+				</xe:dashNode>
+			</xe:this.dashNodes>
+		</xe:dashboard>
+	</xe:djContentPane>
+</xp:view>

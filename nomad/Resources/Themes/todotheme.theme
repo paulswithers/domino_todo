@@ -1,0 +1,14 @@
+<theme extends="Bootstrap3_flat" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="platform:/plugin/com.ibm.designer.domino.stylekits/schema/stylekit.xsd" >
+	
+	<control override="false">
+		<name>ViewRoot</name>
+		<property>
+			<name>pageTitle</name>
+			<value>ToDo Application</value>
+		</property>
+	</control>
+	<resources>
+		<styleSheet href="/todoStyles.css"></styleSheet>
+		<script src="/todoUtils.jss" clientSide="false"></script>
+	</resources>
+</theme>

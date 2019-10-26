@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><imageresource xmlns="http://www.lotus.com/dxl" designerversion="8.5.3" name="button-mark-complete.png" noquery="true" publicaccess="false" replicaid="80257E5A004A751B" version="11.0">
+<noteinfo noteid="37a" sequence="1" unid="F79ABAC4544F04748625849F00348C53">
+<created><datetime dst="true">20191026T043357,95-05</datetime></created>
+<modified><datetime dst="true">20191026T043358,32-05</datetime></modified>
+<revised><datetime dst="true">20191026T043358,31-05</datetime></revised>
+<lastaccessed><datetime dst="true">20191026T043358,31-05</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20191026T043358,31-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Paul S Withers/O=paulswithers</name></updatedby>
+<wassignedby><name>CN=Paul S Withers/O=paulswithers</name></wassignedby>
+
+<item name="$MimeType" sign="true"><text>image/png</text></item>
+<item name="$FileModDT" sign="true"><datetime dst="true">20191026T103050,00+01</datetime></item></imageresource>

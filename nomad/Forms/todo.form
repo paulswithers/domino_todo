@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='utf-8'?>
+<form name='todo' xmlns='http://www.lotus.com/dxl' version='11.0' replicaid='80257E5A004A751B'
+ publicaccess='false' designerversion='8.5.3' renderpassthrough='true'>
+<noteinfo noteid='1ee' unid='5296B367FAC2B56C80257E99003EB297' sequence='33'>
+<created><datetime dst='true'>20150806T122449,51+01</datetime></created>
+<modified><datetime dst='true'>20191026T052132,17-05</datetime></modified>
+<revised><datetime dst='true'>20191026T052132,15-05</datetime></revised>
+<lastaccessed><datetime dst='true'>20191026T052132,15-05</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20191020T083709,45-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Paul S Withers/O=paulswithers</name></updatedby>
+<wassignedby><name>CN=Paul S Withers/O=paulswithers</name></wassignedby><code
+ event='windowtitle'><formula>@Name([CN];@Author)</formula></code>
+<body><richtext>
+<pardef id='1' hide='notes web mobile'/>
+<par def='1'><run><font size='12pt' name='Verdana' pitch='variable' truetype='true'
+ familyid='20'/><field borderstyle='inset' type='text' allowmultivalues='true'
+ kind='editable' name='completed' listinputseparators='comma' listdisplayseparator='comma'><keywords
+ helperbutton='false' columns='1' ui='checkbox'/><code event='defaultvalue'><formula
+>"false"</formula></code></field></run><compositedata type='98' prevtype='65418'
+ nexttype='222' afterparcount='8' containertype='65418' aftercontainercount='1'
+ afterbegincount='4'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata></par>
+<pardef id='2'/>
+<par def='2'/>
+<table widthtype='fitmargins' refwidth='11.5833in'><tablecolumn width='1.5514in'/><tablecolumn
+ width='100%'/>
+<tablerow>
+<tablecell>
+<pardef id='4' leftmargin='0.0785in' spacebefore='1.5' spaceafter='1.5' keepwithnext='true'
+ keeptogether='true'><code event='hidewhen'><formula>@IsNewDoc</formula></code></pardef>
+<par def='4'><run><font size='12pt' style='bold' name='Verdana' pitch='variable'
+ truetype='true' familyid='20'/>Status</run></par></tablecell>
+<tablecell>
+<pardef id='5' leftmargin='0.0785in' keepwithnext='true' keeptogether='true'><code
+ event='hidewhen'><formula>@IsNewDoc</formula></code></pardef>
+<par def='5'><run><font size='12pt' style='bold' name='Verdana' pitch='variable'
+ truetype='true' familyid='20'/></run><picture width='153px' height='40px'><imageref
+><code event='value'><formula>@If(completed="true";"complete-doc.png";duedate&lt;@Today;"overdue-doc.png";duedate &lt; @Adjust(@Today;0;0;3;0;0;0);"urgent-doc.png";"incomplete-doc.png")</formula></code></imageref></picture><run
+><font size='12pt' style='bold' name='Verdana' pitch='variable' truetype='true'
+ familyid='20'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<pardef id='6' leftmargin='0.0785in' spacebefore='1.5' spaceafter='1.5' keepwithnext='true'
+ keeptogether='true'/>
+<par def='6'><run><font size='12pt' style='bold' name='Verdana' pitch='variable'
+ truetype='true' familyid='20'/>Author</run></par></tablecell>
+<tablecell>
+<pardef id='7' leftmargin='0.0785in' spacebefore='1.5' spaceafter='1.5' keepwithnext='true'
+ keeptogether='true'/>
+<par def='7'><run><font size='12pt' style='bold' name='Verdana' pitch='variable'
+ truetype='true' familyid='20'/></run><run><font size='12pt' name='Verdana'
+ pitch='variable' truetype='true' familyid='20'/><computedtext><code event='value'><formula
+>@Name([CN];@Subset(@Author;1))</formula></code></computedtext></run><run
+><font size='12pt' style='bold' name='Verdana' pitch='variable' truetype='true'
+ familyid='20'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='6'><run><font size='12pt' style='bold' name='Verdana' pitch='variable'
+ truetype='true' familyid='20'/>Task Name</run></par></tablecell>
+<tablecell>
+<par def='7'><run><font size='12pt' name='Verdana' pitch='variable' truetype='true'
+ familyid='20'/></run><run><font size='12pt' name='Verdana' pitch='variable'
+ truetype='true' familyid='20'/><field type='text' kind='editable' name='name'/></run><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='12pt'
+ name='Verdana' pitch='variable' truetype='true' familyid='20'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='6'><run><font size='12pt' style='bold' name='Verdana' pitch='variable'
+ truetype='true' familyid='20'/>Description</run></par></tablecell>
+<tablecell>
+<par def='7'><run><font size='12pt' name='Verdana' pitch='variable' truetype='true'
+ familyid='20'/></run><run><font size='12pt' name='Verdana' pitch='variable'
+ truetype='true' familyid='20'/><field type='text' kind='editable' name='description'/></run><compositedata
+ type='98' prevtype='65418' nexttype='222' afterparcount='6' containertype='65418'
+ aftercontainercount='1' afterbegincount='3'>
+Yg4BAIQAAAAAAAAAAAA=
+</compositedata><run><font size='12pt'
+ name='Verdana' pitch='variable' truetype='true' familyid='20'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='6'><run><font size='12pt' style='bold' name='Verdana' pitch='variable'
+ truetype='true' familyid='20'/>Due</run></par></tablecell>
+<tablecell>
+<par def='7'><run><font size='12pt' name='Verdana' pitch='variable' truetype='true'
+ familyid='20'/></run><run><font size='12pt' name='Verdana' pitch='variable'
+ truetype='true' familyid='20'/><field usenotesstyle='false' height='0.3938in'
+ width='1.3778in' multiline='true' borderstyle='single' type='datetime' kind='editable'
+ name='duedate'><datetimeformat show='date' date='yearmonthday' fourdigityear='true'
+ zone='never' dateformat='weekdaydaymonthyear' dayformat='twodigitday' monthformat='twodigitmonth'
+ yearformat='fourdigityear' weekdayformat='shortname' dateseparator1=' ' dateseparator2='/'
+ dateseparator3='/' timeseparator=':' timeformat24='true' preference='usersetting'/></field></run><run
+><font size='12pt' name='Verdana' pitch='variable' truetype='true' familyid='20'/></run></par></tablecell></tablerow>
+<tablerow>
+<tablecell>
+<par def='6'><run><font size='12pt' style='bold' name='Verdana' pitch='variable'
+ truetype='true' familyid='20'/>Priority</run></par></tablecell>
+<tablecell>
+<par def='7'><run><font size='12pt' name='Verdana' pitch='variable' truetype='true'
+ familyid='20'/></run><run><font size='12pt' name='Verdana' pitch='variable'
+ truetype='true' familyid='20'/><field usenotesstyle='false' height='0.2813in'
+ width='1in' multiline='true' borderstyle='none' lookupeachchar='false' lookupaddressonrefresh='false'
+ type='keyword' kind='editable' name='priority'><keywords helperbutton='false'
+ columns='1' ui='combobox'><textlist><text>Low</text><text>Medium</text><text
+>High</text></textlist></keywords></field></run><run><font size='12pt' name='Verdana'
+ pitch='variable' truetype='true' familyid='20'/></run></par></tablecell></tablerow></table>
+<par def='2'/>
+<pardef id='8' hide='read print copy preview embedded'/>
+<par def='8'><actionhotspot hotspotstyle='none'><code event='click'><formula
+>@Command([FileSave]);
+@Command([EditDocument];"0");
+@Command([RefreshWindow])</formula></code><picture width='66px' height='30px'><imageref
+ name='button-save.png'/></picture></actionhotspot>    <actionhotspot hotspotstyle='none'><code
+ event='click'><formula>@If(@IsNewDoc;@Command([FileCloseWindow]);@Command([EditDocument];"0"))</formula></code><picture
+ width='81px' height='30px' scaledheight='0.3125in' scaledwidth='0.8438in'><imageref
+ name='button-cancel.png'/></picture></actionhotspot></par>
+<pardef id='9' hide='edit print copy previewedit embedded'/>
+<par def='9'><actionhotspot hotspotstyle='none'><code event='click'><formula
+>@Command([EditDocument])</formula></code><picture width='60px' height='30px'><imageref
+ name='button-edit.png'/></picture></actionhotspot>    <actionhotspot hotspotstyle='none'><code
+ event='click'><formula>@Command([Clear]);
+@Command([RefreshWindow])</formula></code><picture width='76px' height='30px'><imageref
+ name='button-delete.png'/></picture></actionhotspot></par>
+<pardef id='10' hide='edit print copy previewedit embedded'><code event='hidewhen'><formula
+>completed="true"</formula></code></pardef>
+<par def='10'><actionhotspot hotspotstyle='none'><picture width='156px' height='30px'><imageref
+ name='button-mark-complete.png'/></picture><code event='declarations'><lotusscript
+>
+
+</lotusscript></code><code event='click'><lotusscript>Sub Click(Source As Button)
+	Dim ws As New NotesUIWorkspace
+	Dim uidoc As NotesUIDocument
+	Dim doc As NotesDocument
+	
+	Set uidoc = ws.CurrentDocument
+	Set doc = uidoc.Document
+	doc.completed="true"
+	Call doc.save(True, False)
+	Call ws.ReloadWindow
+End Sub</lotusscript></code></actionhotspot></par>
+<pardef id='11' hide='edit print copy previewedit embedded'><code event='hidewhen'><formula
+>completed="false"</formula></code></pardef>
+<par def='11'><actionhotspot hotspotstyle='none'><picture width='166px' height='30px'><imageref
+ name='button-mark-incomplete.png'/></picture><code event='click'><lotusscript
+>Sub Click(Source As Button)
+	Dim ws As New NotesUIWorkspace
+	Dim uidoc As NotesUIDocument
+	Dim doc As NotesDocument
+	
+	Set uidoc = ws.CurrentDocument
+	Set doc = uidoc.Document
+	doc.completed="false"
+	Call doc.save(True, False)
+	Call ws.ReloadWindow
+End Sub</lotusscript></code></actionhotspot></par></richtext></body>
+<item name='$$ScriptName' summary='false' sign='true'><text>todo</text></item></form>
+

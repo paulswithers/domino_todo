@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<frameset name='Main' xmlns='http://www.lotus.com/dxl' version='11.0' replicaid='80257E5A004A751B'
+ publicaccess='false' designerversion='8.5.3' spacing='0px' bordercolor='none'>
+<noteinfo noteid='2ba' unid='66028E04E4B8F4E68625849D003D0E26' sequence='4'>
+<created><datetime dst='true'>20191024T060653,18-05</datetime></created>
+<modified><datetime dst='true'>20191024T060751,98-05</datetime></modified>
+<revised><datetime dst='true'>20191024T060751,96-05</datetime></revised>
+<lastaccessed><datetime dst='true'>20191024T060751,96-05</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20191024T060653,59-05</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Paul S Withers/O=paulswithers</name></updatedby>
+<wassignedby><name>CN=Paul S Withers/O=paulswithers</name></wassignedby>
+<frame><namedelementlink type='frameset'><code event='value'><formula>@If(@Platform="iOS";"Mobile";"")</formula></code><code
+ event='namedelementkind'><formula>"Frameset"</formula></code></namedelementlink></frame></frameset>
+

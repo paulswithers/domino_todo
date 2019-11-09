@@ -1,22 +1,22 @@
 <?xml version='1.0' encoding='utf-8'?>
 <view name='urgentView' xmlns='http://www.lotus.com/dxl' version='11.0' replicaid='80257E5A004A751B'
  showinmenu='false' noreplace='true' publicaccess='false' designerversion='8.5.3'
- unreadmarks='none' onopengoto='lastopened' onrefresh='refresh' headers='beveled'
+ unreadmarks='none' onopengoto='lastopened' onrefresh='refresh' headers='simple'
  opencollapsed='false' showresponsehierarchy='true' showmargin='true' shrinkrows='false'
  extendlastcolumn='false' showhierarchies='false' unreadcolor='black' rowlinecount='1'
- headerlinecount='1' rowspacing='1' bgcolor='white' totalscolor='black' headerbgcolor='white'
+ headerlinecount='1' rowspacing='1' bgcolor='white' totalscolor='black' headerbgcolor='#fcba03'
  boldunreadrows='false' evaluateactions='false' allownewdocuments='false'
  allowcustomizations='true' hidemarginborder='false' marginwidth='0px' marginbgcolor='white'
  uniquekeys='false'>
-<noteinfo noteid='18a' unid='C190FE11C84F9C3C80257E99003EB0A0' sequence='15'>
+<noteinfo noteid='18a' unid='C190FE11C84F9C3C80257E99003EB0A0' sequence='17'>
 <created><datetime dst='true'>20150806T122444,48+01</datetime></created>
-<modified><datetime dst='true'>20191026T053652,95-05</datetime></modified>
-<revised><datetime dst='true'>20191026T053652,94-05</datetime></revised>
-<lastaccessed><datetime dst='true'>20191026T053652,94-05</datetime></lastaccessed>
+<modified><datetime>20191028T101640,23-06</datetime></modified>
+<revised><datetime>20191028T101640,21-06</datetime></revised>
+<lastaccessed><datetime>20191028T101640,21-06</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20191020T083705,76-05</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Paul S Withers/O=paulswithers</name></updatedby>
-<wassignedby><name>CN=Paul S Withers/O=paulswithers</name></wassignedby><code
- event='selection'><formula>SELECT form = "todo" &amp; completed = "false" &amp; (@Now &lt; duedate) &amp; (((duedate - @Now)/86400) &lt; 3)</formula></code>
+<updatedby><name>CN=Paul Withers/O=Intec</name></updatedby>
+<wassignedby><name>CN=Paul Withers/O=Intec</name></wassignedby><code event='selection'><formula
+>SELECT form = "todo" &amp; completed = "false" &amp; (@Now &lt;= duedate) &amp; (((duedate - @Now)/86400) &lt; 3)</formula></code>
 <column resort='both' hidedetailrows='false' itemname='name' width='10' resizable='true'
  separatemultiplevalues='false' sortnoaccent='true' sortnocase='true' showaslinks='false'><columnheader
  title='To-Do'><font size='9pt' style='bold'/></columnheader></column>

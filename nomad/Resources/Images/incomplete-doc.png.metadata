@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?><imageresource xmlns="http://www.lotus.com/dxl" designerversion="8.5.3" name="incomplete-doc.png" noquery="true" publicaccess="false" replicaid="80257E5A004A751B" version="11.0">
-<noteinfo noteid="2d2" sequence="1" unid="D16FA6C8754880EB8625849E00413DDA">
-<created><datetime dst="true">20191025T065236,74-05</datetime></created>
-<modified><datetime dst="true">20191025T065237,23-05</datetime></modified>
-<revised><datetime dst="true">20191025T065237,22-05</datetime></revised>
-<lastaccessed><datetime dst="true">20191025T065237,22-05</datetime></lastaccessed>
-<addedtofile><datetime dst="true">20191025T065237,22-05</datetime></addedtofile></noteinfo>
+<noteinfo noteid="3a6" sequence="1" unid="64218391FD45F2EC862584AD0071EFE4">
+<created><datetime>20191109T144429,80-06</datetime></created>
+<modified><datetime>20191109T144430,04-06</datetime></modified>
+<revised><datetime>20191109T144430,03-06</datetime></revised>
+<lastaccessed><datetime>20191109T144430,03-06</datetime></lastaccessed>
+<addedtofile><datetime>20191109T144430,03-06</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Paul S Withers/O=paulswithers</name></updatedby>
 <wassignedby><name>CN=Paul S Withers/O=paulswithers</name></wassignedby>
 
 <item name="$MimeType" sign="true"><text>image/png</text></item>
-<item name="$FileModDT" sign="true"><datetime dst="true">20191025T124719,00+01</datetime></item></imageresource>
+<item name="$FileModDT" sign="true"><datetime>20191109T204148,25+00</datetime></item></imageresource>

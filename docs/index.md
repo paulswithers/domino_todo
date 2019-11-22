@@ -5,7 +5,7 @@ nextPage: pages/setup/get-started
 
 {::options parse_block_html="true" /}
 
-![HCL Nomad](/images/HCL_Nomad@2x.png "HCL Nomad")
+![HCL Nomad](images/HCL_Nomad@2x.png "HCL Nomad")
 
 ### Introduction
 HCL Nomad brings Domino applications to mobile devices leveraging traditional Domino development skills for the rich client. Desktop client applications can be used without any additional changes in HCL Nomad. But it's worth bearing in mind some differences, and coding accordingly:

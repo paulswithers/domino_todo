@@ -19,7 +19,7 @@ It's important to bear in mind that you cannot switch IDs on HCL Nomad. So the I
 {: .troubleshoot #trouble1}
 
 ### Setting up The Database
-1. Download the database, as outlined in [Pre-requisites](/{{site.baseurl}}index#pre-requisites).
+1. Download the database, as outlined in [Pre-requisites]({{site.baseurl}}/index#pre-requisites).
 1. Copy the file to your Notes Client's data directory. There is no specific folder location required, no dependencies on other applications, but a suggestion would be in a `tutorials` folder, i.e. `tutorials\ToDo.nsf`. If you selected the defaults for Notes install, this will be "C:\Program Files\HCL\Notes\Data".
 1. Open the application in HCL Notes using File > Open > HCL Notes Application (keyboard shortcut is Ctrl + O). navigating to the location you placed the file.
 ![File Open]({{site.baseurl}}/images/get-started-open.png "File Open"){: .shadow}

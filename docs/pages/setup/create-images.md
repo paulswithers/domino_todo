@@ -29,11 +29,11 @@ The images will be created using Font Awesome, presented via XPages. The images 
 1. Open the application in Domino Designer.
 1. Switch to the Package Explorer view.
 1. Locate the `WebContent` folder. Right-click it and select Create > New > Other... Under the General category, select Folder and click Next.
-![New Folder]({{site.url}}/images/create-images-new-folder.png "New Folder")
+![New Folder]({{site.baseurl}}/images/create-images-new-folder.png "New Folder")
 1. Set the folder name as "font-awesome-5.11.2", with the number matching the Font Awesome version you downloaded.
 1. From Windows Explorer drag the "webfonts" folders from Font Awesome into the "font-awesome-5.11.2" folder.
 1. Repeat the process and create a folder named "css" under "font-awesome-5.11.2".
 1. In Windows Explorer, open the "css" folder. Drag `all.css` into the "css" folder you just created in Domino Designer.
 
-<div><p>The WebContent folder should now look like this:</p><p>![WebContent]({{site.url}}/images/create-images-WebContent.png "WebContent"){: .shadow}</p></div>
+<div><p>The WebContent folder should now look like this:</p><p>![WebContent]({{site.baseurl}}/images/create-images-WebContent.png "WebContent"){: .shadow}</p></div>
 {: .troubleshoot #trouble1}

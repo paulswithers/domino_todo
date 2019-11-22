@@ -1,9 +1,0 @@
----
-layout: default
-prevPage: /index
-nextPage: pages/developing/create-images
-slug:
-    - label: Developing
-      url: /sitemap#
-    - Creating Images
----

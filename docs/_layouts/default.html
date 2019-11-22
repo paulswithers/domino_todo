@@ -11,8 +11,8 @@
     <div class="container">
       <a {% if page.prevPage %} class="btn btn-secondary" href={{page.prevPage}} {% else %} class="btn btn-disabled" href="#" {% endif %}>Previous Page</a>
       <a style="float:right" {% if page.nextPage %} class="btn btn-secondary" href={{page.nextPage}} {% else %} class="btn btn-disabled" href="#" {% endif %}>Next Page</a>
-      {% assign top_url = '/' %}
-      {% assign top_slug = 'home' %}
+      {% assign top_url = '/index.html' || relative_url %}
+      {% assign top_slug = 'Home' %}
       {% include breadcrumbs.html %}
       <div class="row">
         <div class="col-md-3 col-xs-12" id="navigation">

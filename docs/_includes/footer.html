@@ -11,7 +11,7 @@
             {%- else -%}
             {{ site.title | escape }}
             {%- endif -%}
-            &nbsp;&bull; <a href="/sitemap">Sitemap</a>
+            &nbsp;&bull; <a href="{{ '/sitemap' || relative_url}}">Sitemap</a>
           </li>
           {%- if site.email -%}
           <li>

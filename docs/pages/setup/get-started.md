@@ -1,10 +1,10 @@
 ---
 layout: default
-prevPage: {{site.url}}/index
+prevPage: /index
 nextPage: pages/setup/create-images
 slug:
     - label: Setup
-      url: {{site.url}}/sitemap#Setup
+      url: /sitemap#Setup
     - Get Started
 ---
 

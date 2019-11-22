@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+{%- include head.html -%}
+
+<body>
+
+  {%- include header.html -%}
+
+  <div class="py-3">
+    <div class="container">
+      <a {% if page.prevPage %} class="btn btn-secondary" href={{page.prevPage}} {% else %} class="btn btn-disabled" href="#" {% endif %}>Previous Page</a>
+      <a style="float:right" {% if page.nextPage %} class="btn btn-secondary" href={{page.nextPage}} {% else %} class="btn btn-disabled" href="#" {% endif %}>Next Page</a>
+      {% assign top_url = '/' %}
+      {% assign top_slug = 'home' %}
+      {% include breadcrumbs.html %}
+      <div class="row">
+        <div class="col-md-3 col-xs-12" id="navigation">
+          {% include contents.html %}
+        </div>
+        <div class="page-content col-md-9 col-xs-12">
+          {{ content }}
+          <a {% if page.prevPage %} class="btn btn-secondary" href={{page.prevPage}} {% else %} class="btn btn-disabled" href="#" {% endif %}>Previous Page</a>
+          <a style="float:right" {% if page.nextPage %} class="btn btn-secondary" href={{page.nextPage}} {% else %} class="btn btn-disabled" href="#" {% endif %}>Next Page</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {%- include footer.html -%}
+
+</body>
+
+</html>

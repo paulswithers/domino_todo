@@ -78,3 +78,5 @@ Do you think there's a gotcha here
 
 You could have gone wrong!
 {: .troubleshoot #trouble1}
+
+<br/>

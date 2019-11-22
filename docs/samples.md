@@ -80,3 +80,19 @@ You could have gone wrong!
 {: .troubleshoot #trouble1}
 
 <br/>
+
+{% raw %}
+~~~xml
+	<!-- rgb(29,181,54) -->
+	<xp:div style="font-size:32px;color:#1db536; border: 1px solid black; padding: 4px">
+		<i class="fas fa-check-circle" style="padding-right: 5px"></i>
+		Completed
+	</xp:div>
+
+	<xp:br></xp:br>
+    <xp:br></xp:br>
+~~~
+{: .code}
+{% endraw %}
+
+<br/>

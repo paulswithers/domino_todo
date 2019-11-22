@@ -39,8 +39,8 @@
 
 <script>
   $(function () {
-    $(".flow").hide();
-    $('<button class="btn btn-success btn-sm" type="button" style="float:right">Copy</button>').prependTo(".flow").click(function (e) {
+    $(".code").hide();
+    $('<button class="btn btn-success btn-sm" type="button" style="float:right">Copy</button>').prependTo(".code").click(function (e) {
       var ta = document.createElement('textarea');
       ta.value = $(this).next()[0].innerText;
       ta.style.position = 'absolute';
@@ -56,13 +56,13 @@
       }, 3000)
     })
 
-    $('<button class="btn btn-primary btn-sm" type="button">Show flow</button>').insertBefore(".flow").click(function (e) {
+    $('<button class="btn btn-primary btn-sm" type="button">Show Code</button>').insertBefore(".code").click(function (e) {
       if ($(this).next().is(":visible")) {
         $(this).next().slideUp();
-        $(this).text("Show flow");
+        $(this).text("Show Code");
       } else {
         $(this).next().slideDown();
-        $(this).text("Hide flow");
+        $(this).text("Hide Code");
       }
     })
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 prevPage: pages/developing/image-resources
-nextPage: 
+nextPage: pages/developing/to-do-form
 slug:
     - label: Developing the Application
       url: pages/developing/intro
@@ -59,7 +59,7 @@ This will give a "thumbs up" icon if the To Do is completed, a "thumbs down" ico
 {: .panel-heading}
 <div class="panel-body">
 
-Notes has a special view type that displays a calendar view in Notes and Nomad clients. It is set up with specific settings.
+Notes has a special view type that displays a calendar view in Notes and Nomad clients. It is set up with specific settings. The key one of those is that the first column must be a date-time sorted ascending.
 
 </div>
 </div>
@@ -74,3 +74,9 @@ Notes has a special view type that displays a calendar view in Notes and Nomad c
 1. Switch to the third tab, "Style" with the gradient icon.
 1. In the "Header" section, change the style to "Tabs".   
     ![Tabs]({{site.baseurl}}/images/developing-calendar-view-style.png "Tabs"){: .shadow}
+1. Create a column with the title "Due". On the second tab, "Sorting" with two-way vertical arrows, set the Sort to Ascending. Set the column value to be a field, `duedate".
+1. Create the following additional columns, in order:
+    - To-Do, with the column value for the field `name`.
+    - Author, with the column value for a "Simple Function", `Author(s) (Simple Name)`.
+    - Prority, with the column value for the field `priority`.
+    - Completed, with the column value for the formula `@If(complete="true";84;83)`. Open the Column properties box and tick "Display values as icons". Save and close the view.

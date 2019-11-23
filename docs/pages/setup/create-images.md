@@ -22,8 +22,6 @@ You will need some kind of image capture and manipulation software, e.g. TechSmi
 </div>
 </div>
 
-The images will be created using Font Awesome, presented via XPages. The images need to be of an appropriate size for HCL Nomad. With modern screen resolutions, it can be easier to capture the image at a larger size and resize.
-
 ### Adding Font Awesome to XPages
 
 1. Download [Font Awesome "Free for Web"](https://fontawesome.com/download).
@@ -91,12 +89,18 @@ Depending how the server is configured, Domino Designer may or may not get the r
 
 #### Taking and Resizing Status Images
 
+The images will be created using Font Awesome, presented via XPages. The images need to be of an appropriate size for HCL Nomad. With modern screen resolutions, it can be easier to capture the image at a larger size and resize.
+{: .why #why1}
+
 1. Capture an image of the "Completed" status image, from one pixel inside the black border. Note the pixel sizes, so the other images can be captured at the same size.
 1. Resize the image to 40px high, keeping the aspect ratio.
 1. Save the image with the filename "complete-doc.png" for importing into the To Do application later.
 1. Repeat for the other three statuses - Incomplete, Urgent! and Overdue. Filename should be "incomplete-doc.png", "urgent-doc.png" and "overdue-doc.png". Ensure you capture the image at the same pixel sizes, so that as you change the status of a To Do document, the switch feels seamless.
 
 ### Creating Action Button Images
+Notes can have buttons on the Action Bar and buttons within a Form as hotspots. But this tutorial will use images for the buttons, with hotspots around the button. This is to give a richer styling.
+{: .why #why1}
+
 1. Return to Domino Designer and the XPage.
 1. In the source pane, paste the following code to create a "Save" button image.
     {% raw %}
@@ -174,6 +178,9 @@ Depending how the server is configured, Domino Designer may or may not get the r
 1. Repeat for the other view images - incomplete, urgent, overdue, todo and calendar. Filenames should be "incomplete-dashboard.png", "urgent-dashboard.png", "overdue-dashboard.png", "todos-dashboard.png" and "calendar-dashboard.png".
 
 #### Creating Selected Versions of the Images
+The images include the background colour. To identify whether the view image is selected or not, create a different version witth a different background.
+{: .why #why1}
+
 1. Return to Domino Designer and the XPage.
 1. Change the `background-color` property of the `div` tag to `#c9c9c9`.
 1. Repeat the process for creating the previous versions of the images. Filenames should be "complete-dashboard-selected.png", "incomplete-dashboard-selected.png", "urgent-dashboard-selected.png", "overdue-dashboard-selected.png", "todos-dashboard-selected.png" and "calendar-dashboard-selected.png".

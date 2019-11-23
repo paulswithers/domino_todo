@@ -8,7 +8,9 @@
         $(".page-content h3, .page-content h4").each(function () {
             var li = $('<li id="contents-item-' + $(this).attr('id') + '"><a href="#' + $(this).attr('id') + '">' + $(this).text() + '</a></li>').appendTo("#page-contents");
             if ($(this)[0].nodeName === "H3") {
-                li.addClass("contents-title")
+                li.addClass("contents-title");
+            } else {
+                li.addClass("contents-child");
             }
         })
 

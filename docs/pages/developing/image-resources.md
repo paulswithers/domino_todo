@@ -1,11 +1,11 @@
 ---
 layout: default
-prevPage: pages/developing/image-resources
-nextPage: 
+prevPage: pages/developing/intro
+nextPage: pages/developing/views
 slug:
     - label: Developing the Application
       url: pages/developing/intro
-    - Views
+    - Image Resources
 ---
 
 {::options parse_block_html="true" /}

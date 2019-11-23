@@ -10,6 +10,18 @@ slug:
 
 {::options parse_block_html="true" /}
 
+<div class="panel panel-info">
+**Views**
+{: .panel-heading}
+<div class="panel-body">
+
+Views are a combination of a definition of:
+- an index for the database (or multiple indexes, if you have re-sortable columns).
+- a user interface for displaying the entries in that index.
+
+</div>
+</div>
+
 ### Updating Existing Views
 1. In the Applications view of Domino Designer, double-click on the Views part in the To Do application.
 1. Double-click on the "completeView" view to open it.

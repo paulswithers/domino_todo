@@ -29,7 +29,7 @@ You will need some kind of image capture and manipulation software, e.g. TechSmi
 1. Open the application in Domino Designer.
 1. Switch to the Package Explorer view.
 1. Locate the `WebContent` folder. Right-click it and select Create > New > Other... Under the General category, select Folder and click Next.
-![New Folder]({{site.baseurl}}/images/create-images-new-folder.png "New Folder"){: .shadow}
+  ![New Folder]({{site.baseurl}}/images/create-images-new-folder.png "New Folder"){: .shadow}
 1. Set the folder name as "font-awesome-5.11.2", with the number matching the Font Awesome version you downloaded.
 1. From Windows Explorer drag the "webfonts" folders from Font Awesome into the "font-awesome-5.11.2" folder.
 1. Repeat the process and create a folder named "css" under "font-awesome-5.11.2".
@@ -46,9 +46,9 @@ You will need some kind of image capture and manipulation software, e.g. TechSmi
 1. Double-click on "XPages".
 1. Click on the "New XPage" button. Name the new XPage "font_awesome". Switch to the "Source" pane. The content here is XML, with attributes which can be manually typed into the Source pane, entered into properties on the "All Properties" panel or - for some properties - entered into the other "pretty panels" above the All Properties panel.
 1. In the All Properties panel, navigate to the `styling` category and the `style` property. Enter the value `padding: 20px`. This ensures there's plenty of room around the content.
-![Style]({{site.baseurl}}/images/create-images-style.png "Style"){: .shadow}
+  ![Style]({{site.baseurl}}/images/create-images-style.png "Style"){: .shadow}
 1. Scroll up to `resources` under `basics`. Click into the cell for value, to get the "Add" and "Remove" buttons. Click the Add button and select **xp:styleSheet**.
-![Stylesheet]({{site.baseurl}}/images/create-images-stylesheet.png "Stylesheet"){: .shadow}
+  ![Stylesheet]({{site.baseurl}}/images/create-images-stylesheet.png "Stylesheet"){: .shadow}
 1. In the `href` property of the styleSheet, enter `/font-awesome-5.11.2/css/all.css`. This will map to the Font Awesome CSS stylesheet added to the WebContent folder.
 
     Obviously if you imported a different version to the WebContent folder and named the sub-folder differently, you need to amend the `href` property accordingly.

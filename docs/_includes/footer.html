@@ -87,5 +87,16 @@
         $(this).text("Hide troubleshooting");
       }
     })
+
+    $(".advanced").hide();
+    $('<button class="btn btn-success btn-sm" type="button">Challenge Yourself</button>').insertBefore(".advanced").click(function (e) {
+      if ($(this).next().is(":visible")) {
+        $(this).next().slideUp();
+        $(this).text("Show advanced");
+      } else {
+        $(this).next().slideDown();
+        $(this).text("Hide advanced");
+      }
+    })
   });
 </script>

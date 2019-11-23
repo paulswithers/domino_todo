@@ -10,4 +10,5 @@ layout: indices
     1. [Image Resources]({{site.baseurl}}/pages/developing/image-resources)
     1. [Views]({{site.baseurl}}/pages/developing/views)
     1. To Do Form
+    1. Dashboard Form
     1. Framesets

@@ -1,7 +1,7 @@
 ---
 layout: default
 prevPage: pages/developing/image-resources
-nextPage: 
+nextPage: pages/developing/dashboard-form
 slug:
     - label: Developing the Application
       url: pages/developing/intro

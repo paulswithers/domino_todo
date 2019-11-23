@@ -9,6 +9,6 @@ layout: indices
 1. [Developing the Application]({{site.baseurl}}/pages/developing/intro)
     1. [Image Resources]({{site.baseurl}}/pages/developing/image-resources)
     1. [Views]({{site.baseurl}}/pages/developing/views)
-    1. To Do Form
-    1. Dashboard Form
+    1. [To Do Form]({{site.baseurl}}/pages/developing/to-do-form)
+    1. [Dashboard Form]({{site.baseurl}}/pages/developing/dashboard-form)
     1. Framesets

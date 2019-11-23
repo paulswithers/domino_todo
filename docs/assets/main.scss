@@ -30,13 +30,12 @@ a.active {
     color: #000000;
 }
 
-.page-content img{
-    margin: 5px 0;
+h3, h4 {
+    margin-top: 0.5rem;
 }
 
-.contents-header {
-    padding-top: 5px;
-    font-size: 1.2rem;
+ul {
+    list-style-type: square;
 }
 
 .footer {
@@ -47,16 +46,19 @@ a.active {
     margin-bottom: 0px;
 }
 
-.indented {
-    margin: 0 40px;
+.contents-header {
+    padding-top: 5px;
+    font-size: 1.2rem;
 }
 
-h3 {
-    margin-top: 0.5rem;
+.contents-child {
+    margin-left: 10px;
+    font-size: 1rem;
 }
 
-ul {
-    list-style-type: square;
+.fixed-contents {
+    position: fixed;
+    top: 5px;
 }
 
 #page-contents {
@@ -77,9 +79,12 @@ ul {
     border-left: 6px solid #2780E3;
 }
 
-.fixed-contents {
-    position: fixed;
-    top: 5px;
+.page-content img{
+    margin: 5px 0;
+}
+
+.indented {
+    margin: 0 40px;
 }
 
 .info-table td, .info-table th {

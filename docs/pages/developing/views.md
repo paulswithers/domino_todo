@@ -26,6 +26,9 @@ Views are a combination of a definition of:
 1. In the Applications view of Domino Designer, double-click on the Views part in the To Do application.
 1. Double-click on the "completeView" view to open it.
 1. Open the View Properties box by either clicking the "View/Folder Properties" button, pressing Alt + Enter, or double-clicking a column header and changing the filter at the top from "Column" to "View".
+
+    Alt + Enter opens the Properties dialog in any context. The drop-down allows you to change which properties are being displayed, based on what's available for the current focus.
+    {: .alert .alert-info}
 1. Switch to the second tab, "Options" with the "i" icon.
 1. Change the "On Refresh" combo box option to "Refresh Display".   
     ![Refresh Display]({{site.baseurl}}/images/developing-views-refresh.png "Refresh Display"){: .shadow}

@@ -11,4 +11,5 @@ layout: indices
     1. [Views]({{site.baseurl}}/pages/developing/views)
     1. [To Do Form]({{site.baseurl}}/pages/developing/to-do-form)
     1. [Dashboard Form]({{site.baseurl}}/pages/developing/dashboard-form)
-    1. Framesets
+    1. [Framesets]({{site.baseurl}}/pages/developing/framesets)
+1. [HCL Nomad]({{site.baseurl}}/pages/nomad)

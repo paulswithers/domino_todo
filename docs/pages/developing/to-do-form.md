@@ -55,6 +55,8 @@ The "todo" Form already exists. Although a Form is not needed for XPages, it sor
 
     The formula determines which image to display. If the value of the `completed` field is `true`, the "complete-doc.png" image is displayed. If the `duedate` field is before today, the "overdue-doc.png" image is displayed. If the `duedate` field is within the last 3 days, "urgent-doc.png" is displayed. Otherwise the "incomplete-doc.png" is displayed.
     {: .why #why2}
+1. Select the whole of the first row and open Text Properties. On the Paragraph Hide When tab, put a tick in "Hide paragraph if formula is true" and enter the formula `@IsNewDoc`.
+    ![Hide When]({{site.baseurl}}/images/developing-todo-form-status.png "Hide When")
 1. Click into the blank cell of the second row. Use the menu option Create > Computed Text.... The font settings will go back to default, so change the font to "Verdana" and the font size to 12.
 1. In the value, enter the formula `@Name([CN];@Subset(@Author;1))`.
     
@@ -148,13 +150,16 @@ The "todo" Form should look like this:
     A hide-when formula applies to everything on the same line or, in a table, everything on the whole line in the cell. Saving should only be allowed if the document is being edited, so it is hidden if in read mode. Similarly editing, deleting and marking complete / incomplete should only be allowed if the document is being edited, so it is hidden if in edit mode. And marking complete should only be allowed if it's not already complete, so it is hidden if complete is "false". And vice versa for marking incomplete.
     {: .why #why6}
 
+You can check the form in isolation by clicking the "Preview in Notes" button or the menu option "Design > Preview in Notes".
+{: .troubleshoot #troubleshoot1}
+<br/>
+
 <div class="panel panel-success">
 **Congratulations!**
 {: .panel-heading}
 <div class="panel-body">
 
-You have now set up the editable form for To Dos.
+You have now set up the editable Form for To Dos.
 
 </div>
 </div>
-<br/>

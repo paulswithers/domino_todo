@@ -30,8 +30,8 @@ Views are a combination of a definition of:
 1. Change the "On Refresh" combo box option to "Refresh Display".   
     ![Refresh Display]({{site.baseurl}}/images/developing-views-refresh.png "Refresh Display"){: .shadow}
 
-The application will be used offline on HCL Nomad and the views should automatically update as soon as changes are made. For this reason the views will be set to refresh the display whenever refreshing is needed.
-{: .why .indented #why1}
+    The application will be used offline on HCL Nomad and the views should automatically update as soon as changes are made. For this reason the views will be set to refresh the display whenever refreshing is needed.
+    {: .why #why1}
 1. Switch to the third tab, "Style" with the gradient icon.
 1. In the "Header" section, change the style to "Simple".   
     ![Header]({{site.baseurl}}/images/developing-views-header.png "Header"){: .shadow}
@@ -39,6 +39,9 @@ The application will be used offline on HCL Nomad and the views should automatic
     ![Colour]({{site.baseurl}}/images/developing-views-color.png "Colour"){: .shadow}
 1. Enter the RGB values to correspond to the hex colour used on the Completed images - 29, 181, 54.    
     ![Colour Picker]({{site.baseurl}}/images/developing-views-color-picker.png "Colour Picker"){: .shadow}
+
+    For an advanced challenge, try to save the colours as custom colours for future use.
+    {: .advanced #advanced1}
 1. Save and close the view.
 1. Repeat for each of the other views except for the column header colours which should be:
     - incompleteView - RGB 45, 114, 173
@@ -46,19 +49,19 @@ The application will be used offline on HCL Nomad and the views should automatic
     - todosView - RGB 192, 192, 192
     - urgentView - RGB 252, 186, 3
 
-The colours for the column headers will reinforce which view the user is currently in.
-{: .why .indented #why2}
+    The colours for the column headers will reinforce which view the user is currently in.
+    {: .why #why2}
 1. Change the View Selection formula for urgentView to `@Now <= duedate`.
 
-To Dos will be marked as urgent if completion is due within the next three days. This ensures a To Do is still urgent on a Friday if due for completion on the following Monday.
-{: .why .indented #why3}
+    To Dos will be marked as urgent if completion is due within the next three days. This ensures a To Do is still urgent on a Friday if due for completion on the following Monday.
+    {: .why #why3}
 1. In the todosView, change the column value for the Complete column. Change the radio button from "field" to "formula" and enter the formula `@If(complete="true";84;83)`. Save and close the view.
 1. Double click on the column header for Complete to bring up the properties box. Change the column width to 6.
 1. Put a tick in "Display values as icons". Save and close the view.
     ![ToDos view]({{site.baseurl}}/images/developing-views-complete.png "ToDos view"){: .shadow}
 
-This will give a "thumbs up" icon if the To Do is completed, a "thumbs down" icon if it's not.
-{: .why .indented #why3}
+    This will give a "thumbs up" icon if the To Do is completed, a "thumbs down" icon if it's not.
+    {: .why #why3}
 <br/>
 
 @Now has a performance hit, because each entry needs regular recalculation against the current time. To take it further, think about another @Formula that could be used to ensure less frequent recalculations. As a much more advanced step, you could think about how to change the View Selection formulas for overdueView and urgentView to avoid using any time-specific @Formulas.

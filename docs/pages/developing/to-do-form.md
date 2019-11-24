@@ -1,11 +1,11 @@
 ---
 layout: default
-prevPage: pages/developing/image-resources
+prevPage: pages/developing/views
 nextPage: pages/developing/dashboard-form
 slug:
     - label: Developing the Application
       url: pages/developing/intro
-    - Views
+    - To Do Form
 ---
 
 {::options parse_block_html="true" /}
@@ -84,9 +84,12 @@ The "todo" Form should look like this:
     {% endraw %}
     
     ![Hotspot]({{site.baseurl}}/images/developing-todo-form-hotspot.png "Hotspot")
-1. Repeat for the button-cancel.png image, this time using the code `@If(@IsNewDoc;@Command([FileCloseWindow]);@Command([EditDocument];"0"))`.
+
+    The formula saves the document, changes edit mode to "0" (false), and refreshes the window, the current tab of HCL Nomad.
+    {: .why #why3}
+1. Repeat for the button-cancel.png image, this time using the code `@If(@IsNewDoc;@Command([FileCloseWindow]);@Command([EditDocument];"0"))`. For a new document the code needs to close it without saving, otherwise change edit mode to false.
 1. On the next line add the "button-edit.png" and "button-delete.png" image resources.
-1. Add a hotspot around the button-edit.png with the code `@Command([EditDocument])`.
+1. Add a hotspot around the button-edit.png with the code `@Command([EditDocument])`. Because the default value for the second parameter is "1", there is no need to specify the edit mode to apply.
 1. Add a hotspot around the button-delete.png with the code:
     {% raw %}
     ~~~
@@ -95,6 +98,9 @@ The "todo" Form should look like this:
     ~~~
     {: .code #code3}
     {% endraw %}
+
+    @Commands are used to perform actions, with the relevant action in square brackets. Other @Functions that are intended to return a value just begin with "@" symbol, like `@IsNewDoc.
+    {: .why #why4}
 1. On the next line add the button-mark-complete.png image resource and add a hotspot around it. This time Formula Language is not enough. Change the language from "Formula" to "LotusScript" and enter the following code:
     {% raw %}
     ~~~vb
@@ -111,6 +117,9 @@ The "todo" Form should look like this:
     ~~~
     {: .code #code4}
     {% endraw %}
+
+    Because the completed status will be changed from read mode, LotusScript must be used. Variables are declared using the `Dim` keyword, with the top-level object initialised at the same time as `New`. The code gets the back-end version of the current document, sets its `completed` field to "true", and performs a save. Finally the `ReloadWindow` command is run, corresponding to `@Command([RefreshWindow])`.
+    {: .why #why5}
 1. On the next line add the button-mark-incomplete.png image resource and add a hotspot around it. Again, change the language from "Formula" to "LotusScript" and enter the following code:
     {% raw %}
     ~~~vb
@@ -137,7 +146,7 @@ The "todo" Form should look like this:
 1. Click onto the line with Mark Incomplete. Open up the Text Properties and go to the penultimate tab, Paragraph Hide When. In the "Hide paragraph when document is" section, tick all entries except "Previewed for reading" and "Opened for reading". In addition, add a tick in "Hide paragraph if formula is true" and enter the formula `completed="false"` in the area for the hide-when formula.
 
     A hide-when formula applies to everything on the same line or, in a table, everything on the whole line in the cell. Saving should only be allowed if the document is being edited, so it is hidden if in read mode. Similarly editing, deleting and marking complete / incomplete should only be allowed if the document is being edited, so it is hidden if in edit mode. And marking complete should only be allowed if it's not already complete, so it is hidden if complete is "false". And vice versa for marking incomplete.
-    {: .why #why3}
+    {: .why #why6}
 
 <div class="panel panel-success">
 **Congratulations!**

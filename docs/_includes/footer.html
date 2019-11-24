@@ -92,10 +92,10 @@
     $('<button class="btn btn-success btn-sm" type="button">Challenge Yourself</button>').insertBefore(".advanced").click(function (e) {
       if ($(this).next().is(":visible")) {
         $(this).next().slideUp();
-        $(this).text("Show advanced");
+        $(this).text("Show challenge");
       } else {
         $(this).next().slideDown();
-        $(this).text("Hide advanced");
+        $(this).text("Hide challenge");
       }
     })
   });

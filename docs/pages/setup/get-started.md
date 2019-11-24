@@ -52,7 +52,7 @@ One of the powers of HCL Domino is **security**. But obviously the initial desig
 
 <br/>
 
-<div><p>**Can you access this application on HCL Nomad?**</p><p>It's worth trying to access the application on HCL Nomad. Open HCL Nomad, click on the "burger" icon top left and select "Open Application". The dialog is the same as on the Notes Client. Navigate to the server and the To Do application and double-click on it. If everything is set up correctly, the application will open. You could create an offline version now, but you would need to replicate when testing. So we'll cover that later.</p></div>
+<div><p>**Can you access this application on HCL Nomad?**</p><p>It's worth trying to access the application on HCL Nomad. Open HCL Nomad, click on the "hamburger" icon top left and select "Open Application". The dialog is the same as on the Notes Client. Navigate to the server and the To Do application and double-click on it. If everything is set up correctly, the application will open. You could create an offline version now, but you would need to replicate when testing. So we'll cover that later.</p></div>
 {: .troubleshoot #trouble3}
 
 <br/>

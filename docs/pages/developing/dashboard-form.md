@@ -107,3 +107,77 @@ However, by default the user will be prompted whether or not to save the documen
     - Set the field's value formula to `@Elements(@DbColumn("":"NoCache";"";"overdueView";1))`.
     - Change the first line of the hotspot formula to `@Environment("ToDo_View";"overdueView");`.
 
+The form should now look like this, with one cell of the table still empty.
+![Dashboard Form]({{site.baseurl}}/images/developing-dashboard-form-dashboard.png "Dashboard Form")
+
+### Create To Do and Change Views
+The final cell is for creating a new To Do and switching views. The dashboard areas allow switching views. But that might not be obvious for some users. Also the calendar view and view for all To Dos don't have a dashboard statistic, because those views have all the To Dos in the database. And a button needs to be provided for creating new To Dos. So it makes sense to add buttons for all of those in the final cell.
+
+#### Create the images
+
+1. In the final cell, from the menu, select Create > Image Resource.... Select the "todo-new.png" image.
+1. Use the menu Picture > Picture Properties. In the Scaling %, change the width and height to 50.
+
+    ![Picture Properties]({{site.baseurl}}/images/developing-dashboard-form-picture-properties.png "Picture Properties")
+1. On the next line, repeat to insert "todos-dashboard.png".
+1. Change the picture scaling to 50% and click the "@" button to compute the image to display. Enter the formula `@If(@Environment("ToDo_View")="todosView";"todos-dashboard-selected.png";"todos-dashboard.png")`
+
+    The formula will look for the ToDo_View environment variable, which is also the one set via the hotspots on the dashboard area. If the environment variable is for "todosView", the selected version of the image will be used, the one with the shaded background. If not, the version with a white background will be displayed.
+    {: .why #why5}
+1. Add five spaces. Repeat to insert "complete-dashboard.png".
+1. Change the picture scaling to 50% and click the "@" button to compute the image to display. Enter the formula `@If(@Environment("ToDo_View")="completeView";"complete-dashboard-selected.png";"complete-dashboard.png")`
+1. On the next line, repeat to insert "calendar-dashboard.png".
+1. Change the picture scaling to 50% and click the "@" button to compute the image to display. Enter the formula `@If(@Environment("ToDo_View")="calendarView";"calendar-dashboard-selected.png";"calendar-dashboard.png")`
+1. Add five spaces. Repeat to insert "urgent-dashboard.png".
+1. Change the picture scaling to 50% and click the "@" button to compute the image to display. Enter the formula `@If(@Environment("ToDo_View")="urgentView";"urgent-dashboard-selected.png";"urgent-dashboard.png")`
+1. On the next line, repeat to insert "incomplete-dashboard.png".
+1. Change the picture scaling to 50% and click the "@" button to compute the image to display. Enter the formula `@If(@Environment("ToDo_View")="incompleteView";"incomplete-dashboard-selected.png";"incomplete-dashboard.png")`
+1. Add five spaces. Repeat to insert "urgent-dashboard.png".
+1. Change the picture scaling to 50% and click the "@" button to compute the image to display. Enter the formula `@If(@Environment("ToDo_View")="overdueView";"overdue-dashboard-selected.png";"overdue-dashboard.png")`
+
+Because the calendar image is wider, the images may not fully line up. Use different spacing on the final line to align the buttons.
+{: .advanced #advanced1}
+
+#### Add Hotspots
+1. Select the "todo-new.png" image and from the menu select Create > Hotspot> Action Hotspot....
+    ![Hotspot]({{site.baseurl}}/images/developing-dashboard-form-hotspot.png "Hotspot")
+1. Take the tick out of "Show border around hotspot" and enter the following formula for the hotspot:
+
+    {% raw %}
+    ~~~
+    @SetTargetFrame("NotesPreview");
+    @Command([Compose];"todo")
+    ~~~
+    {: .code #code2}
+    {% endraw %}
+
+    The formula will compose the a document based on the "todo" Form, targeting a Frame called "NotesPreview" as its context. The next part of the tutorial will cover frames.
+    {: .why #why6}
+1. Repeat for the "todos-dashboard.png", the first image on the second line. Enter the following formula:
+
+    {% raw %}
+    ~~~
+    @Environment("ToDo_View";"todosView");
+    @Command([RefreshWindow])
+    ~~~
+    {: .code #code3}
+    {% endraw %}
+1. Repeat for the remaining images, changing the formulas as follows:
+    - For "complete-dashboard.png", change the first line of the formula to `@Environment("ToDo_View";"completeView");`.
+    - For "calendar-dashboard.png", change the first line of the formula to `@Environment("ToDo_View";"calendarView");`.
+    - For "urgent-dashboard.png", change the first line of the formula to `@Environment("ToDo_View";"urgentView");`.
+    - For "incomplete-dashboard.png", change the first line of the formula to `@Environment("ToDo_View";"incompleteView");`.
+    - For "overdue-dashboard.png", change the first line of the formula to `@Environment("ToDo_View";"overdueView");`.
+
+The final cell should look like this:
+![View Buttons]({{site.baseurl}}/images/developing-dashboard-form-view-buttons.png "View Buttons")
+
+<div class="panel panel-success">
+**Congratulations!**
+{: .panel-heading}
+<div class="panel-body">
+
+You have now set up the dashboard Form. All that is left is to put everything together and test.
+
+</div>
+</div>

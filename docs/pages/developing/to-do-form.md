@@ -69,6 +69,12 @@ The "todo" Form already exists. Although a Form is not needed for XPages, it sor
     
     ![Priority]({{site.baseurl}}/images/developing-todo-form-priority.png "Priority field")
 
+1. Double-click on the "completed" field. Set the Default Value to "false" so, by default, To Dos will not be completed.
+1. In the Field or Text Properties go to the penultimate tab, Paragraph Hide When. In the "Hide paragraph from" section, tick to hide it from "Notes R4.6 or later", "Web" and "Mobile".
+
+    The "completed" field needs to be "false" or "true". Note, there is no boolean field type in Notes. The XPages interface was expecting text values of "true" and "false". In Notes Client development, values of "0" and "1" are also used, as will be seen later. The "completed" field should not be available for manual editing, so it will be hidden from all client types.
+    {: .why #why3}
+
 The "todo" Form should look like this:
 ![ToDo Form]({{site.baseurl}}/images/developing-todo-form-troubleshoot.png "ToDo Form")
 
@@ -88,7 +94,7 @@ The "todo" Form should look like this:
     ![Hotspot]({{site.baseurl}}/images/developing-todo-form-hotspot.png "Hotspot")
 
     The formula saves the document, changes edit mode to "0" (false), and refreshes the window, the current tab of HCL Nomad.
-    {: .why #why3}
+    {: .why #why4}
 1. Repeat for the button-cancel.png image, this time using the code `@If(@IsNewDoc;@Command([FileCloseWindow]);@Command([EditDocument];"0"))`. For a new document the code needs to close it without saving, otherwise change edit mode to false.
 1. On the next line add the "button-edit.png" and "button-delete.png" image resources.
 1. Add a hotspot around the button-edit.png with the code `@Command([EditDocument])`. Because the default value for the second parameter is "1", there is no need to specify the edit mode to apply.
@@ -102,7 +108,7 @@ The "todo" Form should look like this:
     {% endraw %}
 
     @Commands are used to perform actions, with the relevant action in square brackets. Other @Functions that are intended to return a value just begin with "@" symbol, like `@IsNewDoc.
-    {: .why #why4}
+    {: .why #why6}
 1. On the next line add the button-mark-complete.png image resource and add a hotspot around it. This time Formula Language is not enough. Change the language from "Formula" to "LotusScript" and enter the following code:
     {% raw %}
     ~~~vb
@@ -148,7 +154,7 @@ The "todo" Form should look like this:
 1. Click onto the line with Mark Incomplete. Open up the Text Properties and go to the penultimate tab, Paragraph Hide When. In the "Hide paragraph when document is" section, tick all entries except "Previewed for reading" and "Opened for reading". In addition, add a tick in "Hide paragraph if formula is true" and enter the formula `completed="false"` in the area for the hide-when formula.
 
     A hide-when formula applies to everything on the same line or, in a table, everything on the whole line in the cell. Saving should only be allowed if the document is being edited, so it is hidden if in read mode. Similarly editing, deleting and marking complete / incomplete should only be allowed if the document is being edited, so it is hidden if in edit mode. And marking complete should only be allowed if it's not already complete, so it is hidden if complete is "false". And vice versa for marking incomplete.
-    {: .why #why6}
+    {: .why #why7}
 
 You can check the form in isolation by clicking the "Preview in Notes" button or the menu option "Design > Preview in Notes".
 {: .troubleshoot #troubleshoot1}

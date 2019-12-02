@@ -1,7 +1,7 @@
 ---
 layout: default
 prevPage: pages/developing/framesets
-nextPage: 
+nextPage: pages/summary
 slug:
     - HCL Nomad
 ---
@@ -35,7 +35,7 @@ Updating the Application
 <div class="panel-body">
 
 If you need to make changes, you will make them on the server replica. But Notes will cache design for the current session of the application. To pull those down to HCL Nomad:
-1. Click on the "hanburger" icon and click "Replication"
+1. Click on the "hamburger" icon and click "Replication"
 1. Click "Replicate All".
 1. Close the To Do application and re-open it.
 

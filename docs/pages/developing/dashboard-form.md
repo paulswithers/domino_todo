@@ -110,6 +110,9 @@ However, by default the user will be prompted whether or not to save the documen
 The form should now look like this, with one cell of the table still empty.
 ![Dashboard Form]({{site.baseurl}}/images/developing-dashboard-form-dashboard.png "Dashboard Form")
 
+Because table cell colours have been used, there is not an option to give a rounded border. But if an image is used, it's not possible to compute the total of To Dos for that status. Try to develop it in a way that gives a rounded border, so a more sophisticated look.
+{: .advanced #advanced1}
+
 ### Create To Do and Change Views
 The final cell is for creating a new To Do and switching views. The dashboard areas allow switching views. But that might not be obvious for some users. Also the calendar view and view for all To Dos don't have a dashboard statistic, because those views have all the To Dos in the database. And a button needs to be provided for creating new To Dos. So it makes sense to add buttons for all of those in the final cell.
 
@@ -136,7 +139,7 @@ The final cell is for creating a new To Do and switching views. The dashboard ar
 1. Change the picture scaling to 50% and click the "@" button to compute the image to display. Enter the formula `@If(@Environment("ToDo_View")="overdueView";"overdue-dashboard-selected.png";"overdue-dashboard.png")`
 
 Because the calendar image is wider, the images may not fully line up. Use different spacing on the final line to align the buttons.
-{: .advanced #advanced1}
+{: .advanced #advanced2}
 
 #### Add Hotspots
 1. Select the "todo-new.png" image and from the menu select Create > Hotspot> Action Hotspot....

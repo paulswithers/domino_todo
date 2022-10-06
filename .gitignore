@@ -4,3 +4,5 @@
 nomad/.settings/*
 nomad/.classpath
 nomad/.project
+
+Gemfile.lock
